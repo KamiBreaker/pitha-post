@@ -129,12 +129,12 @@ export default function OurStory() {
         </div>
       </section>
 
-      {/* 3. FAQ Section */}
-      <section className="bg-peach/60 py-20 lg:py-28 border-b-2 border-forest/15" id="faq">
+      {/* 3. FAQ Section (Muted Cream Background) */}
+      <section className="bg-cream py-20 lg:py-28 border-b-2 border-forest/15" id="faq">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5 flex flex-col gap-4">
-              <span className="bg-forest text-parchment px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest w-fit">
+              <span className="bg-forest text-parchment px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest w-fit border border-forest-deep">
                 GOOD TO KNOW &bull; প্রশ্নোত্তর
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest leading-tight">
@@ -153,7 +153,7 @@ export default function OurStory() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-parchment-light rounded-3xl p-8 sm:p-10 border-2 border-forest shadow-stamp">
+            <div className="lg:col-span-7 bg-parchment rounded-3xl p-8 sm:p-10 border-2 border-forest shadow-stamp">
               <FAQSection />
             </div>
           </div>

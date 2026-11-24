@@ -5,8 +5,8 @@ import AlpanaMotif from '../components/ui/AlpanaMotif';
 export default function HowItWorks() {
   return (
     <main className="bg-parchment min-h-screen">
-      {/* 1. Page Header */}
-      <div className="bg-paddy/30 border-b-2 border-forest/15 py-16 lg:py-20 relative overflow-hidden">
+      {/* 1. Page Header (Muted Cream) */}
+      <div className="bg-cream border-b-2 border-forest/15 py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="max-w-3xl">
             <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 mb-3">
@@ -35,7 +35,7 @@ export default function HowItWorks() {
       <HowItWorksSection />
 
       {/* 3. Delivery & Policies Breakdown */}
-      <section className="bg-parchment-light py-16 lg:py-24 border-t-2 border-forest/15">
+      <section className="bg-cream py-16 lg:py-24 border-t-2 border-forest/15">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-parchment rounded-3xl p-8 border-2 border-forest shadow-stamp">

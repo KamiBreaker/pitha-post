@@ -43,34 +43,37 @@ export default function Boxes() {
 
   return (
     <main className="bg-parchment min-h-screen">
-      {/* 1. Header with Cultural Stamp */}
-      <div className="bg-terracotta text-parchment-light border-b-2 border-forest py-16 lg:py-20 relative overflow-hidden">
+      {/* 1. Header with Cultural Stamp (Warm Muted Cream & Heritage Forest Typography) */}
+      <div className="bg-cream text-forest border-b-2 border-forest/15 py-16 lg:py-20 relative overflow-hidden">
         {/* Background seal */}
-        <div className="absolute top-0 right-0 w-80 h-80 text-parchment/10 pointer-events-none">
+        <div className="absolute top-0 right-0 w-80 h-80 text-forest/5 pointer-events-none">
           <AlpanaMotif className="w-full h-full" variant="seal" />
         </div>
 
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
           <div className="max-w-2xl">
-            <span className="bg-mustard text-forest px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 mb-3">
-              <AlpanaMotif className="w-3 h-3 text-forest" />
+            <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 mb-3 border border-forest-deep shadow-sm">
+              <AlpanaMotif className="w-3 h-3 text-mustard" />
               THE PITHA POST CATALOGUE &bull; পিঠার তালিকা
             </span>
-            <h1 className="font-serif text-4xl sm:text-6xl font-black text-parchment-light leading-tight">
-              Pick your parcel. Make pitha hot at home.
+            <h1 className="font-serif text-4xl sm:text-6xl font-black text-forest leading-tight">
+              Pick your parcel.{' '}
+              <span className="italic font-normal text-terracotta">
+                Make pitha hot at home.
+              </span>
             </h1>
-            <p className="text-parchment-light/90 text-base sm:text-lg mt-4 leading-relaxed">
+            <p className="text-forest/80 text-base sm:text-lg mt-4 leading-relaxed">
               Every box is packed with stone-milled fragrant Atop rice flour, unadulterated Jessore date palm molasses, and keepsake step cards.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3 text-xs font-mono font-bold text-forest">
-              <span className="bg-parchment px-3.5 py-1.5 rounded-full border border-forest shadow-sm">
+              <span className="bg-parchment px-3.5 py-1.5 rounded-full border-2 border-forest shadow-sm">
                 📍 Dhaka Deliveries Only
               </span>
-              <span className="bg-mustard px-3.5 py-1.5 rounded-full border border-forest shadow-sm">
+              <span className="bg-mustard px-3.5 py-1.5 rounded-full border-2 border-forest shadow-sm">
                 ✋ Manual Opt-In Each Month
               </span>
-              <span className="bg-paddy px-3.5 py-1.5 rounded-full border border-forest shadow-sm">
+              <span className="bg-paddy/60 px-3.5 py-1.5 rounded-full border-2 border-forest shadow-sm">
                 🌾 100% Pure Jessore Gur
               </span>
             </div>
@@ -100,7 +103,7 @@ export default function Boxes() {
                     className={`relative px-4 py-2 rounded-full text-xs font-mono font-bold border-2 border-forest transition-colors cursor-pointer select-none ${
                       isSelected
                         ? 'text-parchment bg-forest shadow-stamp'
-                        : 'bg-parchment-light text-forest hover:bg-parchment'
+                        : 'bg-cream text-forest hover:bg-parchment'
                     }`}
                   >
                     {label}
@@ -134,7 +137,7 @@ export default function Boxes() {
         </motion.section>
 
         {/* 4. Future Roadmap & Seasonal Creations */}
-        <section className="bg-parchment-light rounded-3xl p-8 sm:p-12 border-2 border-forest shadow-stamp">
+        <section className="bg-cream rounded-3xl p-8 sm:p-12 border-2 border-forest shadow-stamp">
           <div className="max-w-xl mb-8">
             <span className="bg-berry text-parchment-light px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-block mb-2">
               COMING THIS WINTER &bull; আগাম আয়োজন

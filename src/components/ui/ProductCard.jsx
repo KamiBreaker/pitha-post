@@ -26,10 +26,10 @@ export default function ProductCard({ product, variant = 'default' }) {
       className={`
         relative flex flex-col rounded-3xl border-2 border-forest overflow-hidden transition-all duration-300 group
         ${isFeatured
-          ? 'bg-parchment-light shadow-stamp-terra ring-2 ring-terracotta/40'
+          ? 'bg-cream shadow-stamp-terra ring-2 ring-terracotta/40'
           : isGift
-          ? 'bg-peach/90 shadow-stamp'
-          : 'bg-parchment-light shadow-stamp'
+          ? 'bg-cream shadow-stamp'
+          : 'bg-cream shadow-stamp'
         }
         hover:-translate-y-1.5 hover:shadow-rich
       `}

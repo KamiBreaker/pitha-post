@@ -98,19 +98,19 @@ export default function HowItWorksSection() {
             {STEPS.map((step) => (
               <div
                 key={step.num}
-                className="bg-pale-green/40 hover:bg-pale-green/80 rounded-3xl p-6 border border-forest/10 flex flex-col justify-between gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft"
+                className="bg-parchment rounded-3xl p-6 border-2 border-forest shadow-stamp flex flex-col justify-between gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-rich"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-12 h-12 rounded-2xl bg-cream border border-forest/10 flex items-center justify-center text-2xl shadow-sm">
+                    <span className="w-12 h-12 rounded-2xl bg-cream border-2 border-forest flex items-center justify-center text-2xl shadow-sm">
                       {step.icon}
                     </span>
-                    <span className="font-mono text-xs font-bold text-warm-gray bg-cream px-2.5 py-1 rounded-full border border-forest/10">
+                    <span className="font-mono text-xs font-bold text-parchment bg-forest px-2.5 py-1 rounded-sm border border-forest-deep">
                       {step.num}
                     </span>
                   </div>
 
-                  <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-forest-muted">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-terracotta">
                     {step.tag}
                   </span>
 
@@ -118,12 +118,12 @@ export default function HowItWorksSection() {
                     {step.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-warm-gray leading-relaxed mt-2">
+                  <p className="text-xs sm:text-sm text-forest/80 leading-relaxed mt-2">
                     {step.body}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-forest/10 flex items-center text-[11px] font-medium text-forest-muted">
+                <div className="pt-3 border-t border-forest/10 flex items-center text-[11px] font-mono font-bold text-terracotta">
                   <span>Step {step.num} of 05</span>
                 </div>
               </div>
@@ -132,21 +132,21 @@ export default function HowItWorksSection() {
         </div>
 
         {/* 2. Business Model Canvas Overview */}
-        <div className="bg-forest text-cream rounded-3xl p-8 sm:p-12 lg:p-16 shadow-lift relative overflow-hidden">
+        <div className="bg-forest text-parchment rounded-3xl p-8 sm:p-12 lg:p-16 border-2 border-forest-deep shadow-stamp-mustard relative overflow-hidden">
           {/* Subtle background glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-forest-light/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-forest-light/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-label uppercase text-gold mb-3">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-widest uppercase text-mustard mb-3">
               <span className="text-sm">✦</span>
               <span>Academic E-Business Framework</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-cream text-balance mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-parchment text-balance mb-4">
               The Pitha Post E-Business Model
             </h2>
 
-            <p className="text-cream/70 text-sm sm:text-base max-w-2xl leading-relaxed mb-12">
+            <p className="text-parchment/70 text-sm sm:text-base max-w-2xl leading-relaxed mb-12">
               How a seasonal Bengali cultural staple is transformed into a modern, low-overhead D2C e-business with high customer trust and zero payment gateway friction.
             </p>
 
@@ -154,16 +154,16 @@ export default function HowItWorksSection() {
               {CANVAS.map(({ label, value, icon }) => (
                 <div
                   key={label}
-                  className="bg-cream/10 hover:bg-cream/15 rounded-2xl p-6 border border-cream/10 backdrop-blur-sm transition-colors flex flex-col justify-between"
+                  className="bg-parchment/10 hover:bg-parchment/15 rounded-2xl p-6 border border-parchment/15 backdrop-blur-sm transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2.5 mb-3">
                       <span className="text-lg">{icon}</span>
-                      <p className="text-[11px] font-sans font-semibold uppercase tracking-wider text-gold">
+                      <p className="text-[11px] font-mono font-bold uppercase tracking-wider text-mustard">
                         {label}
                       </p>
                     </div>
-                    <p className="text-xs sm:text-sm text-cream/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-parchment/80 leading-relaxed">
                       {value}
                     </p>
                   </div>
@@ -171,9 +171,9 @@ export default function HowItWorksSection() {
               ))}
             </div>
 
-            <div className="mt-12 pt-8 border-t border-cream/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div className="flex items-center gap-3 text-xs text-cream/60">
-                <span className="w-2 h-2 rounded-full bg-gold" />
+            <div className="mt-12 pt-8 border-t border-parchment/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="flex items-center gap-3 text-xs text-parchment/60 font-mono">
+                <span className="w-2 h-2 rounded-full bg-mustard" />
                 <span>Designed for submission in the E-Business Strategy course (Dec 2026).</span>
               </div>
 
@@ -182,7 +182,7 @@ export default function HowItWorksSection() {
                 to="/boxes"
                 variant="secondary"
                 size="md"
-                className="bg-cream text-forest hover:bg-pale-green font-semibold"
+                className="bg-mustard text-forest hover:bg-mustard-light font-bold border-2 border-forest shadow-stamp"
               >
                 Explore the box catalogue &rarr;
               </Button>

@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-parchment text-forest font-sans selection:bg-terracotta selection:text-parchment-light;
+    @apply bg-parchment text-forest font-sans selection:bg-terracotta selection:text-cream;
   }
 
   h1, h2, h3, h4, h5 {
@@ -26,7 +26,7 @@
 
   /* Cultural postage stamp frame */
   .postage-frame {
-    @apply relative border-2 border-dashed border-forest/30 p-2 rounded-xl bg-parchment-light/60;
+    @apply relative border-2 border-dashed border-forest/30 p-2 rounded-xl bg-cream/80;
   }
 
   /* Decorative Alpana divider */
@@ -37,7 +37,7 @@
 
   /* Rich contrast card */
   .card-heritage {
-    @apply bg-parchment-light rounded-2xl border-2 border-forest/15 shadow-stamp transition-all duration-300;
+    @apply bg-cream rounded-2xl border-2 border-forest/15 shadow-stamp transition-all duration-300;
   }
 }
 

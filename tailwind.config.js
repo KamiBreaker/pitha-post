@@ -4,29 +4,39 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Specified Rich Heritage Palette
+        // Refined Bengali Heritage Food-Brand Palette
         forest: {
-          DEFAULT: '#173D2D',
+          DEFAULT: '#173D2D', // Primary brand deep forest green
           deep:    '#0F281E',
-          light:   '#23533F',
-          muted:   '#386B54',
+          light:   '#22533E',
+          muted:   '#346851',
         },
         terracotta: {
-          DEFAULT: '#D95B35',
-          light:   '#E57452',
-          deep:    '#B54320',
-          dark:    '#8E3215',
+          DEFAULT: '#B94F35', // Burnt terracotta accent
+          light:   '#C96349',
+          deep:    '#9B3F28',
+          dark:    '#7D2E1A',
         },
         mustard: {
-          DEFAULT: '#EBAF39',
-          light:   '#F2C463',
-          dark:    '#C4891C',
+          DEFAULT: '#DDAE42', // Muted mustard highlight
+          light:   '#E9BD58',
+          dark:    '#B58B2A',
         },
         parchment: {
-          DEFAULT: '#F5E7D0',
-          light:   '#FAF2E4',
-          dark:    '#EBDA melt',
-          deep:    '#E0CCA8',
+          DEFAULT: '#E9D2AD', // Primary background: warm parchment
+          light:   '#F5EBDD', // Secondary background: muted cream
+          deep:    '#DEC396',
+          dark:    '#CFB17F',
+        },
+        cream: {
+          DEFAULT: '#F5EBDD', // Muted cream
+          light:   '#FAF4EB',
+          dark:    '#EBDCC8',
+        },
+        brown: {
+          DEFAULT: '#2E1F18', // Warm dark brown text / accent
+          dark:    '#221610',
+          muted:   '#4A372D',
         },
         paddy: {
           DEFAULT: '#A8B878',
@@ -38,8 +48,7 @@ export default {
           light:   '#914F5B',
           dark:    '#5C2C35',
         },
-        cream: '#FAF4EB',
-        ink:   '#16241D',
+        ink:   '#173D2D',
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
@@ -56,13 +65,13 @@ export default {
       },
       boxShadow: {
         'stamp': '3px 3px 0px 0px #173D2D',
-        'stamp-terra': '4px 4px 0px 0px #D95B35',
-        'stamp-mustard': '4px 4px 0px 0px #EBAF39',
+        'stamp-terra': '4px 4px 0px 0px #B94F35',
+        'stamp-mustard': '4px 4px 0px 0px #DDAE42',
         'elevation': '0 20px 40px -15px rgba(23, 61, 45, 0.18)',
         'rich': '0 25px 50px -12px rgba(23, 61, 45, 0.25)',
       },
       backgroundImage: {
-        'alpana-pattern': "radial-gradient(#173D2D 0.75px, transparent 0.75px), radial-gradient(#173D2D 0.75px, #F5E7D0 0.75px)",
+        'alpana-pattern': "radial-gradient(#173D2D 0.75px, transparent 0.75px), radial-gradient(#173D2D 0.75px, #E9D2AD 0.75px)",
       },
     },
   },

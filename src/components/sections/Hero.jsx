@@ -72,7 +72,7 @@ export default function Hero() {
 
               <Link
                 to="/boxes"
-                className="inline-flex items-center justify-center gap-2 bg-parchment-light hover:bg-mustard/20 text-forest font-bold text-sm px-7 py-4 rounded-full border-2 border-forest shadow-sm hover:shadow-stamp transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-cream hover:bg-mustard/20 text-forest font-bold text-sm px-7 py-4 rounded-full border-2 border-forest shadow-sm hover:shadow-stamp transition-all"
               >
                 <span>Browse All Kits / পিঠার বাক্স</span>
                 <span className="text-terracotta font-mono">&darr;</span>
@@ -81,16 +81,16 @@ export default function Hero() {
 
             {/* Heritage Sourcing & Trust Strip */}
             <div className="pt-4 border-t-2 border-forest/10 grid grid-cols-3 gap-3 max-w-lg">
-              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
-                <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Origin</span>
+              <div className="bg-cream border-2 border-forest/15 rounded-xl p-3 shadow-sm">
+                <span className="block text-[10px] font-mono uppercase text-brown/70 font-bold">Origin</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-forest">Jessore Khejur Gur</span>
               </div>
-              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
-                <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Flour</span>
+              <div className="bg-cream border-2 border-forest/15 rounded-xl p-3 shadow-sm">
+                <span className="block text-[10px] font-mono uppercase text-brown/70 font-bold">Flour</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-forest">Stone-Ground Atop</span>
               </div>
-              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
-                <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Policy</span>
+              <div className="bg-cream border-2 border-forest/15 rounded-xl p-3 shadow-sm">
+                <span className="block text-[10px] font-mono uppercase text-brown/70 font-bold">Policy</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-terracotta">Zero Auto-Renew</span>
               </div>
             </div>

@@ -122,21 +122,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Decorative Wave Transition into Peach Box Section */}
-      <div className="-mt-1 text-peach">
-        <WaveDivider className="text-peach/80" />
+      {/* Decorative Wave Transition into Muted Cream Showcase */}
+      <div className="-mt-1 text-cream">
+        <WaveDivider className="text-cream" />
       </div>
 
-      {/* 3. Product Showcase — The Winter Trio Box */}
+      {/* 3. Product Showcase — The Winter Trio Box (Muted Cream Background) */}
       {featured && (
-        <section className="bg-peach/80 py-16 lg:py-24 relative border-b-2 border-forest/15">
+        <section className="bg-cream py-16 lg:py-24 relative border-b-2 border-forest/15">
           <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
               {/* Left Details */}
               <div className="lg:col-span-5 flex flex-col gap-6">
                 <div className="flex items-center gap-2">
-                  <span className="bg-forest text-parchment px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-wider">
+                  <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-wider border border-forest-deep">
                     FEATURED PARCEL &bull; বিশেষ বক্স
                   </span>
                 </div>
@@ -153,14 +153,14 @@ export default function Home() {
                 </p>
 
                 {/* Price and Cart Action Card */}
-                <div className="bg-parchment-light rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="bg-parchment rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <span className="text-xs font-mono font-bold uppercase text-warm-gray">
+                    <span className="text-xs font-mono font-bold uppercase text-brown/70">
                       {featured.name} &bull; Serves {featured.servings}
                     </span>
                     <p className="font-serif text-3xl font-black text-forest mt-0.5">
                       {currency}{featured.price.toLocaleString()}
-                      <span className="text-xs font-sans font-normal text-warm-gray ml-1">
+                      <span className="text-xs font-sans font-normal text-brown/70 ml-1">
                         / monthly box
                       </span>
                     </p>
@@ -182,7 +182,7 @@ export default function Home() {
 
               {/* Right: The Kit Includes (Editorial Card List) */}
               <div className="lg:col-span-7">
-                <div className="bg-parchment-light rounded-3xl p-8 sm:p-10 border-2 border-forest shadow-stamp-terra">
+                <div className="bg-parchment rounded-3xl p-8 sm:p-10 border-2 border-forest shadow-stamp-terra">
                   <div className="flex items-center justify-between pb-6 border-b-2 border-forest/10">
                     <div>
                       <span className="text-xs font-mono font-bold uppercase tracking-wider text-terracotta">
@@ -192,7 +192,7 @@ export default function Home() {
                         What Arrives At Your Door
                       </h3>
                     </div>
-                    <span className="bg-paddy text-forest text-xs font-mono font-bold px-3 py-1 rounded-full border border-forest/20">
+                    <span className="bg-paddy/60 text-forest text-xs font-mono font-bold px-3 py-1 rounded-full border border-forest/20">
                       Pre-Portioned
                     </span>
                   </div>
@@ -201,7 +201,7 @@ export default function Home() {
                     {featured.includes.map((inc, i) => (
                       <div
                         key={inc.item}
-                        className="py-4 flex items-center justify-between gap-4 group hover:bg-parchment px-4 -mx-4 rounded-xl transition-colors"
+                        className="py-4 flex items-center justify-between gap-4 group hover:bg-cream px-4 -mx-4 rounded-xl transition-colors"
                       >
                         <div className="flex items-start gap-4">
                           <span className="font-mono text-sm font-black text-terracotta mt-0.5">
@@ -211,7 +211,7 @@ export default function Home() {
                             <h4 className="font-serif text-lg font-bold text-forest">
                               {inc.item}
                             </h4>
-                            <p className="text-xs sm:text-sm text-warm-gray mt-0.5">
+                            <p className="text-xs sm:text-sm text-brown/75 mt-0.5">
                               {inc.note}
                             </p>
                           </div>
@@ -260,7 +260,7 @@ export default function Home() {
             {pithas.map(({ id, name, subtitle, tagline, description, image }, i) => (
               <div
                 key={id}
-                className="bg-parchment-light rounded-3xl border-2 border-forest shadow-stamp hover:-translate-y-2 hover:shadow-rich transition-all duration-300 overflow-hidden flex flex-col group"
+                className="bg-cream rounded-3xl border-2 border-forest shadow-stamp hover:-translate-y-2 hover:shadow-rich transition-all duration-300 overflow-hidden flex flex-col group"
               >
                 {/* Image */}
                 <div
@@ -356,7 +356,7 @@ export default function Home() {
             </div>
 
             {/* The Pitha Post Parcel Way */}
-            <div className="bg-parchment text-forest rounded-3xl p-8 border-2 border-mustard shadow-stamp-mustard">
+            <div className="bg-cream text-forest rounded-3xl p-8 border-2 border-mustard shadow-stamp-mustard">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-forest/70 block mb-2">
                 THE PITHA POST PROMISE
               </span>
@@ -382,8 +382,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Customer Purchase Journey & Timeline */}
-      <section className="bg-parchment py-20 lg:py-28 border-b-2 border-forest/15">
+      {/* 6. Customer Purchase Journey & Timeline (Alternating Muted Cream) */}
+      <section className="bg-cream py-20 lg:py-28 border-b-2 border-forest/15">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-4">
             <div>
@@ -410,7 +410,7 @@ export default function Home() {
             ].map((step) => (
               <div
                 key={step.n}
-                className="bg-parchment-light rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col justify-between gap-4"
+                className="bg-parchment rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col justify-between gap-4"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -435,8 +435,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Expressive CTA Banner (Berry Red & Mustard) */}
-      <section className="bg-berry text-parchment-light py-20 lg:py-24 border-b-2 border-berry-dark">
+      {/* 7. Expressive CTA Banner (Deep Forest Green Anchor with Mustard & Terracotta) */}
+      <section className="bg-forest text-parchment-light py-20 lg:py-24 border-b-2 border-forest-deep">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="max-w-2xl text-center lg:text-left">
             <span className="bg-mustard text-forest font-bold text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-sm inline-block mb-4">
