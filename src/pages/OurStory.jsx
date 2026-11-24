@@ -1,58 +1,67 @@
 import FAQSection from '../components/sections/FAQSection';
 import SectionLabel from '../components/ui/SectionLabel';
 import { Link } from 'react-router-dom';
-import Button from '../components/ui/Button';
 import { pithas } from '../data/pithas';
+import AlpanaMotif from '../components/ui/AlpanaMotif';
 import { gradientContainerStyle, handleImgError } from '../utils/image';
 
 export default function OurStory() {
   return (
-    <main className="bg-cream">
+    <main className="bg-parchment min-h-screen">
       {/* 1. Brand Narrative Header */}
-      <div className="bg-pale-green border-b border-forest/10 py-16 lg:py-24">
-        <div className="max-w-content mx-auto px-6 lg:px-10">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-label uppercase text-warm-gray mb-3">
-              <span className="text-gold">✦</span>
-              <span>Roots &amp; Heritage</span>
-            </div>
+      <div className="bg-forest text-parchment py-20 lg:py-28 relative overflow-hidden border-b-2 border-forest-deep">
+        {/* Background Alpana */}
+        <div className="absolute top-0 right-0 w-96 h-96 text-parchment/5 pointer-events-none">
+          <AlpanaMotif className="w-full h-full" variant="seal" />
+        </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-forest text-balance leading-tight">
-              Pitha was always about the hands that made it.
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+          <div className="max-w-3xl">
+            <span className="bg-mustard text-forest px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 mb-4">
+              <AlpanaMotif className="w-3 h-3 text-forest" />
+              OUR ROOTS &amp; MISSION &bull; ঐতিহ্যের গল্প
+            </span>
+
+            <h1 className="font-serif text-4xl sm:text-6xl font-black text-parchment leading-tight text-balance">
+              Pitha was never just food. It was a family gathering.
             </h1>
 
-            <div className="space-y-6 text-warm-gray text-base sm:text-lg leading-relaxed mt-8">
+            <div className="space-y-6 text-parchment/80 text-base sm:text-lg leading-relaxed mt-8">
               <p>
-                Every winter across Bangladesh, as the morning mist settles over Dhaka, the scent of steaming rice flour and caramelized date palm molasses heralds a time-honored rhythm. It was never just about eating pitha &mdash; it was the quiet patience of grating fresh coconut, kneading flour to the exact crumble, and crowding around the steaming pot.
+                In the rural winter mornings of Bengal, the hearth was never cold. Grandmothers and aunts sat beside clay steaming pots, carefully sifting fresh rice flour through handwoven wicker strainers, layering fragrant grated coconut with dark, caramelized molasses tapped only hours before.
               </p>
               <p>
-                Modern urban life made that ritual intimidating. Sourcing unadulterated <em>khejur gur</em> or getting the right coarse-milled rice flour required tedious market trips. Most families shifted from making pitha to buying cold, soggy batches from street stalls.
+                As life accelerated in Dhaka, that sacred ritual was lost to chaotic grocery runs, adulterated factory syrups, and rubbery street pitha wrapped in old newspapers. The joy was replaced by exhaustion.
               </p>
-              <p className="font-serif italic text-forest text-xl border-l-2 border-gold pl-5 py-1">
-                &ldquo;Pitha Post began with a simple belief: if the sourcing and measuring were taken care of, making pitha at home would become a joyous weekend gathering once again.&rdquo;
-              </p>
+              <div className="bg-parchment/10 rounded-2xl p-6 border-l-4 border-mustard my-4">
+                <p className="font-serif italic text-mustard text-xl leading-relaxed">
+                  &ldquo;Pitha Post was born to bring the aroma of winter back to urban kitchens. By sourcing directly from Jessore palm-tappers and pre-portioning heritage ingredients, we make sure making pitha at home is a 30-minute pleasure, not a 3-day chore.&rdquo;
+                </p>
+              </div>
               <p>
-                Each kit is packed in Dhaka in small weekly batches. We source authentic date palm jaggery directly from trusted artisanal tappers in Jessore, mill our rice flour fresh every Thursday, and enclose printed keepsake recipe cards. The warmth of the kitchen is yours.
+                Each weekly batch is packed by hand in small, sealed boxes. We verify the sweetness of our date molasses, mill our rice flour fresh on Thursdays, and enclose waterproof keepsake recipe cards so even first-timers make pitha with confidence.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. The Three Pitha Varieties (Editorial Spotlight) */}
-      <section className="bg-cream border-b border-forest/10 py-20 lg:py-28">
-        <div className="max-w-content mx-auto px-6 lg:px-10">
-          <div className="mb-16">
-            <SectionLabel>Heritage Recipes</SectionLabel>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-forest mt-3">
-              The Three Winter Classics
+      {/* 2. The Three Heritage Pitha Spotlights */}
+      <section className="bg-parchment py-20 lg:py-28 border-b-2 border-forest/15">
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-2xl mb-16">
+            <span className="bg-terracotta text-parchment-light px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-block mb-2">
+              HERITAGE RECIPE SHOWCASE
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest">
+              The Three Winter Pillars
             </h2>
-            <p className="text-warm-gray text-sm sm:text-base mt-2 max-w-xl">
-              Each pitha represents a distinct culinary technique perfected over generations.
+            <p className="text-forest/70 text-base mt-2">
+              Mastering the delicate culinary textures of Bengali winter.
             </p>
           </div>
 
-          <div className="space-y-20 lg:space-y-24">
+          <div className="space-y-20 lg:space-y-28">
             {pithas.map(({ id, name, subtitle, description, tips, image }, i) => (
               <div
                 key={id}
@@ -60,9 +69,9 @@ export default function OurStory() {
                   i % 2 === 1 ? 'lg:grid-flow-dense' : ''
                 }`}
               >
-                {/* Image */}
+                {/* Photo with Heritage Frame */}
                 <div
-                  className={`lg:col-span-6 rounded-3xl overflow-hidden shadow-lift border border-forest/10 aspect-[4/3] ${
+                  className={`lg:col-span-6 rounded-3xl overflow-hidden border-2 border-forest shadow-stamp aspect-[4/3] bg-forest/10 relative ${
                     i % 2 === 1 ? 'lg:col-start-7' : ''
                   }`}
                   style={gradientContainerStyle()}
@@ -70,10 +79,13 @@ export default function OurStory() {
                   <img
                     src={image}
                     alt={name}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                     onError={handleImgError('pitha')}
                   />
+                  <div className="absolute top-4 left-4 bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold">
+                    {`0${i + 1} / HERITAGE DISH`}
+                  </div>
                 </div>
 
                 {/* Content */}
@@ -82,31 +94,28 @@ export default function OurStory() {
                     i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
                   }`}
                 >
-                  <span className="font-mono text-xs font-bold text-gold tracking-widest">
-                    {`0${i + 1} / VARIETY`}
+                  <span className="text-xs font-mono font-bold text-terracotta uppercase tracking-widest">
+                    {subtitle}
                   </span>
 
-                  <h3 className="font-serif text-3xl sm:text-4xl font-bold text-forest">
+                  <h3 className="font-serif text-3xl sm:text-4xl font-black text-forest">
                     {name}
                   </h3>
 
-                  <p className="text-sm font-semibold text-terracotta uppercase tracking-wider">
-                    {subtitle}
-                  </p>
-
-                  <p className="text-warm-gray text-base leading-relaxed">
+                  <p className="text-forest/80 text-base leading-relaxed">
                     {description}
                   </p>
 
                   {tips && tips.length > 0 && (
-                    <div className="mt-4 bg-pale-green/60 rounded-2xl p-5 border border-forest/10">
-                      <p className="text-xs font-sans font-semibold uppercase tracking-wider text-forest mb-2">
-                        Kitchen secret:
+                    <div className="mt-4 bg-parchment-light rounded-2xl p-6 border-2 border-forest/15 shadow-sm">
+                      <p className="text-xs font-mono font-bold uppercase tracking-wider text-terracotta mb-2 flex items-center gap-1.5">
+                        <span>💡</span>
+                        <span>Kitchen Secret &bull; রান্নার পরামর্শ</span>
                       </p>
-                      <ul className="text-xs text-warm-gray space-y-1.5">
+                      <ul className="text-xs sm:text-sm text-forest/90 space-y-2">
                         {tips.map((t, idx) => (
                           <li key={idx} className="flex items-start gap-2">
-                            <span className="text-forest font-bold">&bull;</span>
+                            <span className="text-terracotta font-bold">&bull;</span>
                             <span>{t}</span>
                           </li>
                         ))}
@@ -121,25 +130,30 @@ export default function OurStory() {
       </section>
 
       {/* 3. FAQ Section */}
-      <section className="bg-pale-green/60 py-20 lg:py-28" id="faq">
-        <div className="max-w-content mx-auto px-6 lg:px-10">
+      <section className="bg-peach/60 py-20 lg:py-28 border-b-2 border-forest/15" id="faq">
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-4 flex flex-col gap-4">
-              <SectionLabel>Good to know</SectionLabel>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest leading-tight">
-                Before the first little bite.
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              <span className="bg-forest text-parchment px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest w-fit">
+                GOOD TO KNOW &bull; প্রশ্নোত্তর
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest leading-tight">
+                Frequently Asked Questions.
               </h2>
-              <p className="text-sm text-warm-gray leading-relaxed">
-                Everything you need to know about our sourcing, subscription model, delivery schedule in Dhaka, and kitchen prep.
+              <p className="text-sm sm:text-base text-forest/75 leading-relaxed">
+                Everything about our ingredient origins, weekly dispatch logistics in Dhaka, and kitchen preparation.
               </p>
               <div className="pt-4">
-                <Button as={Link} to="/boxes" variant="primary" size="md" className="shadow-soft">
-                  Order this month &rarr;
-                </Button>
+                <Link
+                  to="/boxes"
+                  className="inline-block bg-terracotta hover:bg-terracotta-deep text-parchment-light font-bold text-sm px-7 py-3.5 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+                >
+                  Order This Month&rsquo;s Box &rarr;
+                </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-8 bg-cream rounded-3xl p-8 sm:p-10 border border-forest/10 shadow-soft">
+            <div className="lg:col-span-7 bg-parchment-light rounded-3xl p-8 sm:p-10 border-2 border-forest shadow-stamp">
               <FAQSection />
             </div>
           </div>

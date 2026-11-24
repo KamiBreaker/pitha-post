@@ -1,10 +1,9 @@
-// Small label badge — e.g. "Most Popular", "Gift", "One-time"
 const STYLES = {
-  popular:  'bg-gold/15 text-gold border border-gold/30',
-  gift:     'bg-peach text-terracotta border border-terracotta/30',
-  'one-time': 'bg-pale-green text-forest-muted border border-forest/20',
-  subscription: 'bg-pale-green text-forest-muted border border-forest/20',
-  default:  'bg-cream text-warm-gray border border-warm-gray/30',
+  popular:      'bg-mustard text-forest border-2 border-forest',
+  gift:         'bg-terracotta text-parchment-light border-2 border-forest',
+  'one-time':   'bg-parchment-light text-forest border-2 border-forest',
+  subscription: 'bg-forest text-parchment border-2 border-forest-deep',
+  default:      'bg-parchment text-forest border-2 border-forest/30',
 };
 
 export default function Badge({ label, variant = 'default', className = '' }) {
@@ -12,7 +11,7 @@ export default function Badge({ label, variant = 'default', className = '' }) {
   const style = STYLES[variant] ?? STYLES.default;
   return (
     <span
-      className={`inline-block px-2.5 py-0.5 text-xs font-sans font-medium rounded-full ${style} ${className}`}
+      className={`inline-block px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider rounded-sm shadow-sm ${style} ${className}`}
     >
       {label}
     </span>

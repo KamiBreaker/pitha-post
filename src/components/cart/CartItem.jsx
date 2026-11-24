@@ -9,10 +9,10 @@ export default function CartItem({ item }) {
   const product = getProductById(item.id);
 
   return (
-    <div className="flex items-center gap-3.5 py-4 border-b border-forest/10 last:border-0 group">
-      {/* Product Thumbnail */}
+    <div className="flex items-center gap-4 py-4 border-b-2 border-forest/10 last:border-0 group">
+      {/* Product Thumbnail with Stamp Frame */}
       <div
-        className="w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-forest/10 bg-pale-green relative"
+        className="w-16 h-16 rounded-xl overflow-hidden shrink-0 border-2 border-forest bg-forest/10 relative shadow-sm"
         style={gradientContainerStyle()}
       >
         {product?.image && (
@@ -27,29 +27,29 @@ export default function CartItem({ item }) {
 
       {/* Info & Quantity */}
       <div className="flex-1 min-w-0">
-        <h4 className="font-serif text-sm font-bold text-forest truncate">
+        <h4 className="font-serif text-base font-bold text-forest truncate">
           {item.name}
         </h4>
-        <p className="text-[11px] text-warm-gray mt-0.5">
-          {item.purchaseType === 'monthly' ? 'Monthly kit' : 'One-time gift'}
+        <p className="text-[11px] font-mono text-terracotta uppercase mt-0.5">
+          {item.purchaseType === 'monthly' ? 'মাসিক কিট / Monthly' : 'এককালীন / One-Time'}
         </p>
 
-        {/* Qty counter */}
-        <div className="flex items-center gap-2.5 mt-2">
+        {/* Tactile Qty Counter */}
+        <div className="flex items-center gap-2 mt-2">
           <button
             onClick={() => updateQty(item.id, item.quantity - 1)}
             aria-label="Decrease quantity"
-            className="w-6 h-6 rounded-full border border-forest/20 text-forest text-sm font-semibold flex items-center justify-center hover:bg-pale-green active:scale-95 transition-all"
+            className="w-6 h-6 rounded-md border-2 border-forest text-forest text-xs font-bold flex items-center justify-center bg-parchment-light hover:bg-mustard active:scale-95 transition-all cursor-pointer shadow-sm"
           >
             &minus;
           </button>
-          <span className="text-xs font-semibold text-forest w-4 text-center">
+          <span className="text-xs font-mono font-black text-forest w-5 text-center">
             {item.quantity}
           </span>
           <button
             onClick={() => updateQty(item.id, item.quantity + 1)}
             aria-label="Increase quantity"
-            className="w-6 h-6 rounded-full border border-forest/20 text-forest text-sm font-semibold flex items-center justify-center hover:bg-pale-green active:scale-95 transition-all"
+            className="w-6 h-6 rounded-md border-2 border-forest text-forest text-xs font-bold flex items-center justify-center bg-parchment-light hover:bg-mustard active:scale-95 transition-all cursor-pointer shadow-sm"
           >
             +
           </button>
@@ -57,15 +57,15 @@ export default function CartItem({ item }) {
       </div>
 
       {/* Price & Remove */}
-      <div className="flex flex-col items-end gap-1 shrink-0">
-        <span className="font-serif text-sm font-bold text-forest">
+      <div className="flex flex-col items-end gap-1.5 shrink-0">
+        <span className="font-serif text-base font-black text-forest">
           {currency}{(item.price * item.quantity).toLocaleString()}
         </span>
         <button
           onClick={() => removeItem(item.id)}
-          className="text-[11px] text-warm-gray hover:text-terracotta underline decoration-transparent hover:decoration-terracotta transition-colors"
+          className="text-[11px] font-mono font-bold text-terracotta hover:text-terracotta-deep transition-colors cursor-pointer"
         >
-          Remove
+          Remove &times;
         </button>
       </div>
     </div>

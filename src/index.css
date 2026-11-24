@@ -10,28 +10,34 @@
   }
 
   body {
-    @apply bg-cream text-ink font-sans antialiased selection:bg-forest/20 selection:text-forest;
+    @apply bg-parchment text-forest font-sans selection:bg-terracotta selection:text-parchment-light;
   }
 
   h1, h2, h3, h4, h5 {
-    @apply font-serif text-forest tracking-tight;
+    @apply font-serif tracking-tight text-forest;
   }
 }
 
 @layer components {
-  /* Editorial section label */
-  .section-label {
-    @apply text-[11px] font-sans font-semibold tracking-label uppercase text-warm-gray flex items-center gap-1.5;
+  /* Editorial stamp badge */
+  .badge-stamp {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider border-2 border-current rounded-sm shadow-sm;
   }
 
-  /* Refined subtle divider */
-  .divider {
-    @apply border-t border-forest/10;
+  /* Cultural postage stamp frame */
+  .postage-frame {
+    @apply relative border-2 border-dashed border-forest/30 p-2 rounded-xl bg-parchment-light/60;
   }
 
-  /* Fallback gradient */
-  .img-placeholder {
-    @apply bg-gradient-to-br from-pale-green via-cream to-peach;
+  /* Decorative Alpana divider */
+  .alpana-divider {
+    background-image: radial-gradient(circle at 10px 10px, #173D2D 2px, transparent 2.5px);
+    background-size: 20px 20px;
+  }
+
+  /* Rich contrast card */
+  .card-heritage {
+    @apply bg-parchment-light rounded-2xl border-2 border-forest/15 shadow-stamp transition-all duration-300;
   }
 }
 
@@ -39,15 +45,10 @@
   .text-balance {
     text-wrap: balance;
   }
-
-  /* Custom thin scrollbar */
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 5px;
-  }
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-forest/20 rounded-full hover:bg-forest/40 transition-colors;
+  
+  /* Perforated postage edge */
+  .perforated-border {
+    border-style: dashed;
+    border-width: 2px;
   }
 }

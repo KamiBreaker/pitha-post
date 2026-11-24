@@ -1,19 +1,16 @@
-// Reusable button component
-// variant: 'primary' | 'secondary' | 'ghost' | 'outline'
-// size: 'sm' | 'md' | 'lg'
-
+// Modern Bengali Heritage Tactile Button
 const VARIANTS = {
-  primary:   'bg-forest text-cream hover:bg-forest-light active:scale-[0.98]',
-  secondary: 'bg-cream text-forest border border-forest hover:bg-pale-green active:scale-[0.98]',
-  ghost:     'text-forest hover:bg-pale-green active:scale-[0.98]',
-  outline:   'border border-forest/30 text-forest hover:border-forest hover:bg-pale-green active:scale-[0.98]',
-  gold:      'bg-gold text-white hover:bg-terracotta active:scale-[0.98]',
+  primary:   'bg-terracotta hover:bg-terracotta-deep text-parchment-light border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+  secondary: 'bg-mustard hover:bg-mustard-light text-forest border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+  forest:    'bg-forest hover:bg-forest-light text-parchment border-2 border-forest-deep shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
+  outline:   'border-2 border-forest text-forest bg-parchment-light hover:bg-parchment active:translate-x-0.5 active:translate-y-0.5',
+  ghost:     'text-forest hover:text-terracotta active:scale-95',
 };
 
 const SIZES = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-sm',
-  lg: 'px-8 py-4 text-base',
+  sm: 'px-4 py-2 text-xs font-mono uppercase tracking-wider',
+  md: 'px-6 py-3 text-sm font-bold',
+  lg: 'px-8 py-4 text-base font-bold',
 };
 
 export default function Button({
@@ -27,9 +24,8 @@ export default function Button({
   return (
     <Tag
       className={`
-        inline-flex items-center justify-center gap-2 font-sans font-medium
-        rounded-full transition-all duration-150 cursor-pointer
-        ${VARIANTS[variant]} ${SIZES[size]} ${className}
+        inline-flex items-center justify-center gap-2 font-sans rounded-full transition-all duration-150 cursor-pointer
+        ${VARIANTS[variant] ?? VARIANTS.primary} ${SIZES[size] ?? SIZES.md} ${className}
       `}
       {...props}
     >

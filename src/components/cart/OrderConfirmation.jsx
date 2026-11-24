@@ -1,6 +1,6 @@
 import { useCart } from '../../context/CartContext';
-import Button from '../ui/Button';
-import { Link } from 'react-router-dom';
+import { businessConfig } from '../../config/business';
+import AlpanaMotif from '../ui/AlpanaMotif';
 
 export default function OrderConfirmation() {
   const { clearCart, closeCart } = useCart();
@@ -12,46 +12,50 @@ export default function OrderConfirmation() {
 
   return (
     <div className="flex flex-col items-center text-center gap-6 py-4">
-      {/* Icon */}
-      <div className="w-16 h-16 rounded-full bg-pale-green flex items-center justify-center text-3xl">
+      {/* Postage Seal Icon */}
+      <div className="w-20 h-20 rounded-full bg-forest text-mustard flex items-center justify-center text-3xl border-2 border-forest shadow-stamp-terra">
         🫓
       </div>
 
       <div>
-        <h3 className="font-serif text-xl font-semibold text-forest mb-2">
-          Your order message is ready!
+        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-terracotta block mb-1">
+          DISPATCH INITIALIZED &bull; অর্ডার বার্তা প্রস্তুত
+        </span>
+        <h3 className="font-serif text-2xl font-black text-forest">
+          Your WhatsApp message is ready!
         </h3>
-        <p className="text-sm text-warm-gray leading-relaxed">
-          A WhatsApp chat with Pitha Post has opened. Send your message to confirm
-          your kit, delivery fee, and payment details.
+        <p className="text-xs sm:text-sm text-forest/80 leading-relaxed mt-2 max-w-xs">
+          A dedicated WhatsApp chat with Pitha Post has opened in your browser. Send your pre-filled message to confirm your delivery time and payment preference.
         </p>
       </div>
 
-      {/* Steps */}
-      <ol className="text-left w-full space-y-3">
+      {/* Next Steps List */}
+      <ol className="text-left w-full space-y-2.5 bg-parchment-light rounded-2xl p-5 border-2 border-forest/15 shadow-sm text-xs text-forest">
         {[
-          'Send the pre-filled message on WhatsApp.',
-          "We'll confirm your kit and delivery fee.",
-          'Arrange payment through bKash or cash.',
-          'Your pitha box arrives within Dhaka.',
+          'Send the formatted message on WhatsApp.',
+          'We will confirm your delivery slot and local fee.',
+          'Arrange payment via bKash or Cash on Delivery.',
+          'Fresh ingredients arrive at your doorstep in Dhaka.',
         ].map((step, i) => (
-          <li key={i} className="flex items-start gap-3 text-sm text-forest">
-            <span className="w-5 h-5 rounded-full bg-forest text-cream text-xs flex items-center justify-center shrink-0 mt-0.5 font-medium">
+          <li key={i} className="flex items-start gap-3">
+            <span className="w-5 h-5 rounded-md bg-forest text-parchment font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
               {i + 1}
             </span>
-            {step}
+            <span className="leading-snug">{step}</span>
           </li>
         ))}
       </ol>
 
-      <div className="bg-peach rounded-xl p-3 text-xs text-terracotta w-full text-left">
-        <strong>Remember:</strong> This subscription does not auto-renew.
-        Place a fresh order each month before the 25th.
+      <div className="bg-mustard/20 rounded-xl p-3.5 text-xs text-forest border border-mustard/60 w-full text-left">
+        <strong>Remember:</strong> This subscription never auto-renews. You decide when to confirm next month&rsquo;s delivery.
       </div>
 
-      <Button variant="primary" size="md" className="w-full" onClick={handleDone}>
-        Done
-      </Button>
+      <button
+        onClick={handleDone}
+        className="w-full py-4 rounded-full font-bold text-xs uppercase tracking-wider bg-forest hover:bg-forest-light text-parchment border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+      >
+        Done / সম্পন্ন
+      </button>
     </div>
   );
 }

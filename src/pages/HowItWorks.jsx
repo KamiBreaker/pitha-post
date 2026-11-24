@@ -1,54 +1,86 @@
 import HowItWorksSection from '../components/sections/HowItWorksSection';
-import SectionLabel from '../components/ui/SectionLabel';
 import { Link } from 'react-router-dom';
-import Button from '../components/ui/Button';
+import AlpanaMotif from '../components/ui/AlpanaMotif';
 
 export default function HowItWorks() {
   return (
-    <main>
-      {/* Page header */}
-      <div className="bg-pale-green border-b border-forest/10">
-        <div className="max-w-content mx-auto px-6 py-16">
-          <SectionLabel>A simple way to order</SectionLabel>
-          <h1 className="font-serif text-4xl md:text-5xl font-semibold text-forest mt-3 text-balance">
-            Your pitha month starts with a message.
-          </h1>
-          <p className="text-warm-gray mt-4 max-w-xl text-lg leading-relaxed">
-            Choose how many kits you'd like, share your delivery details, and
-            confirm everything through WhatsApp. Fresh order each month — no
-            auto-renewal, ever.
-          </p>
-          <Button as={Link} to="/boxes" variant="primary" size="md" className="mt-6">
-            Order this month →
-          </Button>
+    <main className="bg-parchment min-h-screen">
+      {/* 1. Page Header */}
+      <div className="bg-paddy/30 border-b-2 border-forest/15 py-16 lg:py-20 relative overflow-hidden">
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest inline-flex items-center gap-1.5 mb-3">
+              <AlpanaMotif className="w-3 h-3 text-mustard" />
+              THE PITHA POST DISPATCH ROUTE &bull; কাজের পদ্ধতি
+            </span>
+            <h1 className="font-serif text-4xl sm:text-6xl font-black text-forest leading-tight">
+              A modern D2C food model built on human trust.
+            </h1>
+            <p className="text-forest/80 text-base sm:text-lg mt-4 leading-relaxed">
+              Designed specifically for Dhaka: zero payment gateway friction, manual monthly opt-ins, and artisanal batch sourcing from Jessore&rsquo;s date palm groves.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link
+                to="/boxes"
+                className="bg-terracotta hover:bg-terracotta-deep text-parchment-light font-bold text-sm px-7 py-3.5 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+              >
+                Order This Month&rsquo;s Parcel &rarr;
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Journey + business model */}
+      {/* 2. Journey & Framework Section */}
       <HowItWorksSection />
 
-      {/* Delivery & Policy callout */}
-      <section className="bg-pale-green">
-        <div className="max-w-content mx-auto px-6 py-16">
+      {/* 3. Delivery & Policies Breakdown */}
+      <section className="bg-parchment-light py-16 lg:py-24 border-t-2 border-forest/15">
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-cream rounded-2xl p-8">
-              <SectionLabel className="mb-4">Delivery</SectionLabel>
-              <h3 className="font-serif text-xl font-semibold text-forest mb-3">Within Dhaka</h3>
-              <ul className="text-sm text-warm-gray space-y-2">
-                <li>· Boxes ship in small weekly batches.</li>
-                <li>· Delivery fee confirmed per order via WhatsApp.</li>
-                <li>· Exact timing shared after order confirmation.</li>
-                <li>· Currently Dhaka only — more areas coming.</li>
+            <div className="bg-parchment rounded-3xl p-8 border-2 border-forest shadow-stamp">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-terracotta block mb-2">
+                DELIVERY SCHEDULE &bull; ঢাকা মহানগরী
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-forest mb-4">
+                Dhaka-Wide Dispatch Log
+              </h3>
+              <ul className="space-y-3 text-sm text-forest/80">
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>Weekly Batch Dispatches:</strong> Boxes are assembled every Thursday evening and dispatched on Friday/Saturday mornings for weekend breakfast.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>Coverage:</strong> All sectors of Uttara, Mirpur, Dhanmondi, Gulshan, Banani, Bashundhara, Mohakhali, and Old Dhaka.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>Delivery Fee:</strong> Flat local delivery fee confirmed per area over WhatsApp during order preparation.</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-cream rounded-2xl p-8">
-              <SectionLabel className="mb-4">Subscription policy</SectionLabel>
-              <h3 className="font-serif text-xl font-semibold text-forest mb-3">Your terms, your pace</h3>
-              <ul className="text-sm text-warm-gray space-y-2">
-                <li>· No automatic renewal — ever.</li>
-                <li>· Place a fresh order before the 25th each month.</li>
-                <li>· Skip any month simply by not ordering.</li>
-                <li>· Payment arranged through WhatsApp (bKash or cash).</li>
+
+            <div className="bg-parchment rounded-3xl p-8 border-2 border-forest shadow-stamp">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-terracotta block mb-2">
+                HONEST SUBSCRIPTION POLICY
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-forest mb-4">
+                Manual Renewal Terms
+              </h3>
+              <ul className="space-y-3 text-sm text-forest/80">
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>No Automated Billing:</strong> Your credit card or bank credentials are never stored. Zero unauthorized renewals.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>25th Cutoff Date:</strong> Before the 25th of every month, we send a WhatsApp reminder to confirm your upcoming parcel.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-forest font-bold text-base">&bull;</span>
+                  <span><strong>Skip or Pause Anytime:</strong> Simply decline or ignore the WhatsApp reminder to skip that month with zero penalties.</span>
+                </li>
               </ul>
             </div>
           </div>

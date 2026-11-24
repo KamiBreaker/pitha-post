@@ -4,59 +4,65 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: {
-          DEFAULT: '#FAF7F2',
-          light: '#FDFBF7',
-          dark: '#F3EFE6',
-        },
-        'pale-green': {
-          DEFAULT: '#EDF2E8',
-          light: '#F4F7F0',
-          dark: '#E2EAD9',
-        },
+        // Specified Rich Heritage Palette
         forest: {
-          DEFAULT: '#163323',
-          deep: '#0F2418',
-          light: '#245237',
-          muted: '#3C6B4E',
-        },
-        peach: {
-          DEFAULT: '#FAF0E6',
-          light: '#FCF6EE',
-          dark: '#F5E4D4',
+          DEFAULT: '#173D2D',
+          deep:    '#0F281E',
+          light:   '#23533F',
+          muted:   '#386B54',
         },
         terracotta: {
-          DEFAULT: '#BA673B',
-          light: '#CB7A4F',
-          dark: '#9F532B',
+          DEFAULT: '#D95B35',
+          light:   '#E57452',
+          deep:    '#B54320',
+          dark:    '#8E3215',
         },
-        gold: {
-          DEFAULT: '#D4931A',
-          light: '#E6A833',
-          dark: '#B0750C',
+        mustard: {
+          DEFAULT: '#EBAF39',
+          light:   '#F2C463',
+          dark:    '#C4891C',
         },
-        'warm-gray': {
-          DEFAULT: '#6B6255',
-          light: '#8C8375',
-          dark: '#453E34',
+        parchment: {
+          DEFAULT: '#F5E7D0',
+          light:   '#FAF2E4',
+          dark:    '#EBDA melt',
+          deep:    '#E0CCA8',
         },
-        ink: '#1A1E1B',
+        paddy: {
+          DEFAULT: '#A8B878',
+          light:   '#BDCC93',
+          dark:    '#8B9B5C',
+        },
+        berry: {
+          DEFAULT: '#783D48',
+          light:   '#914F5B',
+          dark:    '#5C2C35',
+        },
+        cream: '#FAF4EB',
+        ink:   '#16241D',
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+        bengali: ['"Noto Serif Bengali"', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
       },
       letterSpacing: {
-        label: '0.12em',
+        label: '0.14em',
+        stamp: '0.2em',
       },
       maxWidth: {
-        content: '1280px',
-        narrow: '980px',
+        editorial: '1360px',
+        content:   '1240px',
       },
       boxShadow: {
-        'soft': '0 4px 20px -2px rgba(22, 51, 35, 0.06)',
-        'lift': '0 12px 32px -4px rgba(22, 51, 35, 0.12)',
-        'float': '0 20px 40px -8px rgba(22, 51, 35, 0.16)',
+        'stamp': '3px 3px 0px 0px #173D2D',
+        'stamp-terra': '4px 4px 0px 0px #D95B35',
+        'stamp-mustard': '4px 4px 0px 0px #EBAF39',
+        'elevation': '0 20px 40px -15px rgba(23, 61, 45, 0.18)',
+        'rich': '0 25px 50px -12px rgba(23, 61, 45, 0.25)',
+      },
+      backgroundImage: {
+        'alpana-pattern': "radial-gradient(#173D2D 0.75px, transparent 0.75px), radial-gradient(#173D2D 0.75px, #F5E7D0 0.75px)",
       },
     },
   },

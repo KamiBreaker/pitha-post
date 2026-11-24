@@ -7,12 +7,13 @@ import OrderConfirmation from './OrderConfirmation';
 import Button from '../ui/Button';
 import { businessConfig } from '../../config/business';
 import { Link } from 'react-router-dom';
+import AlpanaMotif from '../ui/AlpanaMotif';
 
 const STEP_TITLES = {
-  cart:         'Your pitha bag',
-  form:         'Delivery details',
-  review:       'Review your order',
-  confirmation: 'Order confirmed!',
+  cart:         'Your Pitha Bag / পিঠার ঝুলি',
+  form:         'Delivery Address / ঠিকানা',
+  review:       'Review Parcel / যাচাই করুন',
+  confirmation: 'Order Dispatched / সম্পন্ন!',
 };
 
 export default function CartDrawer() {
@@ -37,7 +38,7 @@ export default function CartDrawer() {
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-forest/40 backdrop-blur-sm transition-opacity duration-300"
+          className="fixed inset-0 z-50 bg-forest-deep/60 backdrop-blur-sm transition-opacity duration-300"
           onClick={closeCart}
           aria-hidden="true"
         />
@@ -47,28 +48,28 @@ export default function CartDrawer() {
       <aside
         className={`
           fixed top-0 right-0 z-50 h-full w-full sm:max-w-md
-          bg-cream shadow-float flex flex-col border-l border-forest/10
+          bg-parchment shadow-rich flex flex-col border-l-2 border-forest
           transition-transform duration-300 ease-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-forest/10 bg-pale-green/40">
+        <div className="flex items-center justify-between px-6 py-5 border-b-2 border-forest/15 bg-parchment-light">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-gold">✦</span>
-              <span className="text-[10px] font-sans font-semibold tracking-label uppercase text-warm-gray">
-                Pitha Post
+            <div className="flex items-center gap-1.5">
+              <AlpanaMotif className="w-3 h-3 text-terracotta" />
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-terracotta">
+                PITHA POST &bull; DHAKA
               </span>
             </div>
-            <h2 className="font-serif text-xl font-bold text-forest mt-0.5">
+            <h2 className="font-serif text-xl font-black text-forest mt-0.5">
               {STEP_TITLES[step]}
             </h2>
           </div>
           <button
             onClick={closeCart}
             aria-label="Close bag drawer"
-            className="w-9 h-9 rounded-full border border-forest/20 flex items-center justify-center text-forest hover:bg-pale-green hover:border-forest/40 transition-all text-sm font-semibold active:scale-95"
+            className="w-9 h-9 rounded-full border-2 border-forest flex items-center justify-center text-forest hover:bg-forest hover:text-parchment transition-all text-sm font-bold active:scale-95 cursor-pointer shadow-sm"
           >
             ✕
           </button>
@@ -82,40 +83,37 @@ export default function CartDrawer() {
             <>
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full min-h-[300px] gap-4 text-center py-12">
-                  <span className="w-16 h-16 rounded-full bg-pale-green flex items-center justify-center text-3xl shadow-sm">
+                  <div className="w-16 h-16 rounded-full bg-forest text-mustard flex items-center justify-center text-2xl border-2 border-forest shadow-stamp">
                     🫓
-                  </span>
+                  </div>
                   <div>
-                    <h3 className="font-serif text-xl font-bold text-forest">Your bag is empty.</h3>
-                    <p className="text-xs text-warm-gray mt-1 max-w-xs leading-relaxed">
-                      Choose your favorite winter pitha kit to get started with this month&rsquo;s delivery.
+                    <h3 className="font-serif text-2xl font-black text-forest">Your bag is empty.</h3>
+                    <p className="text-xs text-forest/70 mt-1.5 max-w-xs leading-relaxed">
+                      Choose your favorite winter pitha kit to get started with this month&rsquo;s fresh Dhaka delivery.
                     </p>
                   </div>
-                  <Button
-                    as={Link}
+                  <Link
                     to="/boxes"
-                    variant="primary"
-                    size="md"
                     onClick={closeCart}
-                    className="mt-2"
+                    className="mt-3 bg-terracotta hover:bg-terracotta-deep text-parchment-light font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
                   >
-                    Browse boxes &rarr;
-                  </Button>
+                    Browse Boxes &rarr;
+                  </Link>
                 </div>
               ) : (
                 <div className="space-y-6">
-                  <div className="divide-y divide-forest/10">
+                  <div className="divide-y-2 divide-forest/10">
                     {items.map((item) => (
                       <CartItem key={item.id} item={item} />
                     ))}
                   </div>
 
-                  {/* Manual Renewal Notice */}
-                  <div className="bg-peach rounded-2xl p-4 border border-terracotta/20 text-xs text-terracotta leading-relaxed flex items-start gap-3">
-                    <span className="text-base shrink-0">🌿</span>
+                  {/* Manual Renewal Notice Badge */}
+                  <div className="bg-mustard/20 rounded-2xl p-4 border-2 border-mustard/60 text-xs text-forest leading-relaxed flex items-start gap-3">
+                    <span className="text-lg shrink-0">✋</span>
                     <div>
-                      <strong className="font-semibold block text-forest">Zero auto-renewal.</strong>
-                      You will confirm each month&rsquo;s fresh order separately on WhatsApp before delivery.
+                      <strong className="font-bold block text-forest">No automated rebilling.</strong>
+                      You will confirm each month&rsquo;s order separately on WhatsApp before delivery.
                     </div>
                   </div>
                 </div>
@@ -130,25 +128,24 @@ export default function CartDrawer() {
 
         {/* Footer actions on cart step */}
         {step === 'cart' && items.length > 0 && (
-          <div className="border-t border-forest/10 px-6 py-5 bg-pale-green/20 space-y-4">
+          <div className="border-t-2 border-forest/15 px-6 py-5 bg-parchment-light space-y-4">
             <div className="flex justify-between items-baseline">
               <div>
-                <span className="text-xs text-warm-gray block">Subtotal</span>
-                <span className="text-[11px] text-warm-gray-light">Delivery fee confirmed on WhatsApp</span>
+                <span className="text-xs font-mono font-bold text-forest/70 block uppercase">Subtotal</span>
+                <span className="text-[10px] text-warm-gray">Flat delivery fee confirmed on WhatsApp</span>
               </div>
-              <span className="font-serif text-2xl font-bold text-forest">
+              <span className="font-serif text-2xl font-black text-forest">
                 {currency}{total.toLocaleString()}
               </span>
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full shadow-soft"
+            <button
               onClick={() => setStep('form')}
+              className="w-full py-4 rounded-full font-bold text-sm tracking-wide bg-terracotta hover:bg-terracotta-deep text-parchment-light border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              Continue to delivery &rarr;
-            </Button>
+              <span>Continue to Delivery Details</span>
+              <span className="font-mono">&rarr;</span>
+            </button>
           </div>
         )}
       </aside>

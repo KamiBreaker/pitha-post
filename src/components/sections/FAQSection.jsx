@@ -2,54 +2,56 @@ import { useState } from 'react';
 
 const FAQS = [
   {
-    q: "What comes in the Winter Trio?",
-    a: "The Winter Trio includes rice flour, khejur gur (date palm jaggery), coconut, and a three-pitha recipe card covering bhapa, patishapta and puli — step by step. The kit serves six people.",
+    q: "What comes in the Winter Trio kit?",
+    a: "The Winter Trio includes stone-milled fragrant Atop rice flour, pure unadulterated Jessore Khejur Gur (date palm jaggery), freshly grated and sealed coconut, and our illustrated keepsake recipe card covering Bhapa, Patishapta, and Puli. One kit generously serves six people.",
   },
   {
-    q: "Is it beginner-friendly?",
-    a: "Absolutely. The recipe card is written for first-time pitha makers. Each step is simple and the ingredients are pre-measured, so you just follow along.",
+    q: "Is this suitable for complete beginners?",
+    a: "Yes, 100%! We specifically designed Pitha Post so you don't need years of culinary intuition. The recipe card specifies the exact water-to-flour ratio, resting time, and steaming techniques.",
   },
   {
-    q: "How do monthly orders work?",
-    a: "Nothing renews automatically. Each month, you place a fresh order through WhatsApp before the 25th. We confirm your kit, delivery fee, and payment details there.",
+    q: "How does the manual monthly subscription work?",
+    a: "Nothing auto-renews or bills without your permission. Before the 25th of each month, we send you a WhatsApp check-in. You confirm your order, customize quantities, or pause for the month. We only pack and dispatch after you say yes.",
   },
   {
-    q: "What is the delivery area?",
-    a: "We currently deliver within Dhaka only. Boxes ship in small weekly batches. Exact delivery timing is confirmed with each order via WhatsApp.",
+    q: "Where in Dhaka do you deliver?",
+    a: "We deliver across all Dhaka neighborhoods including Dhanmondi, Gulshan, Banani, Uttara, Mirpur, Bashundhara, Mohakhali, and Old Dhaka. Deliveries are batched for Friday and Saturday mornings.",
   },
   {
-    q: "Can I skip a month?",
-    a: "Yes — since there is no auto-renewal, simply do not place an order that month. You can resume whenever you are ready.",
+    q: "Can I skip a month or pause?",
+    a: "Yes, anytime. Since there is zero automated recurring charge on your card, skipping is as simple as replying 'pause' or placing no order for that month.",
   },
   {
-    q: "Does the kit contain coconut?",
-    a: "Yes. Coconut is part of the filling for all three pithas and is included in every kit. Please note this if you have a coconut allergy.",
+    q: "How is payment handled?",
+    a: "Payment and the local delivery fee are coordinated directly through WhatsApp after your order is submitted on the website. We accept bKash and cash on delivery.",
   },
   {
-    q: "What is Gift a Box?",
-    a: "Gift a Box is a one-time purchase (৳900) — perfect for sending the warmth of winter pitha to family or friends. It does not start a subscription.",
-  },
-  {
-    q: "How do I pay?",
-    a: "Payment and delivery fees are arranged through WhatsApp after you submit your order details. We accept bKash and cash on delivery.",
+    q: "How pure is the date palm jaggery (Khejur Gur)?",
+    a: "We source our jaggery directly from trusted date palm tappers (গাছি) in Jessore. It is 100% natural, unadulterated, and free from industrial sugar syrup, artificial coloring, or soda.",
   },
 ];
 
 function FAQItem({ q, a }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-forest/10 py-4">
+    <div className="border-b-2 border-forest/10 py-5 transition-colors">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-start justify-between gap-4 text-left"
+        className="w-full flex items-start justify-between gap-4 text-left cursor-pointer group"
       >
-        <span className="font-serif text-base font-medium text-forest">{q}</span>
-        <span className="text-warm-gray text-lg shrink-0 mt-0.5">
-          {open ? '\u2212' : '+'}
+        <span className="font-serif text-lg font-bold text-forest group-hover:text-terracotta transition-colors">
+          {q}
+        </span>
+        <span className={`w-7 h-7 rounded-full border-2 border-forest flex items-center justify-center font-mono font-bold text-sm shrink-0 transition-all ${
+          open ? 'bg-forest text-parchment' : 'bg-parchment text-forest group-hover:bg-mustard'
+        }`}>
+          {open ? '−' : '+'}
         </span>
       </button>
       {open && (
-        <p className="mt-3 text-sm text-warm-gray leading-relaxed pr-8">{a}</p>
+        <div className="mt-3.5 text-sm text-forest/80 leading-relaxed pr-6 bg-parchment/60 p-4 rounded-xl border border-forest/10 animate-fadeIn">
+          {a}
+        </div>
       )}
     </div>
   );
@@ -57,12 +59,10 @@ function FAQItem({ q, a }) {
 
 export default function FAQSection() {
   return (
-    <section>
-      <div className="max-w-2xl">
-        {FAQS.map((item) => (
-          <FAQItem key={item.q} {...item} />
-        ))}
-      </div>
-    </section>
+    <div className="divide-y-2 divide-transparent">
+      {FAQS.map((item) => (
+        <FAQItem key={item.q} {...item} />
+      ))}
+    </div>
   );
 }
