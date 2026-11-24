@@ -84,17 +84,20 @@ export const products = [
     price:        900,
     servings:     null,
     tagline:      'Send winter to someone you love.',
-    description:  'A one-time gift package — send the warmth of Bengali winter pitha to family or friends near or far.',
-    badge:        'Gift',
+    description:  'An artisanal festive assortment — handcrafted Nakshi, Patishapta, Puli, and heritage winter sweets in a presentation box.',
+    badge:        'Gift Box',
     image:        '/images/kits/gift-a-box.webp',
     includes: [
-      { item: 'Rice flour',          note: 'Soft, finely milled for tender pitha' },
-      { item: 'Khejur gur',          note: 'Deep, mellow date palm sweetness' },
-      { item: 'Coconut',             note: 'For a fragrant, tender filling' },
-      { item: 'Gift recipe card',    note: 'All three pithas, beautifully printed' },
+      { item: 'Heritage Pitha Assortment', note: 'Nakshi, Patishapta, Puli & festive winter delights' },
+      { item: 'Jessore Nolen Gur dip',    note: 'Pure smoky date palm molasses' },
+      { item: 'Artisanal Keepsake Box',    note: 'Festive packaging with personalized winter greeting note' },
+      { item: 'Gift recipe booklet',       note: 'Heritage folklore and reheating instructions' },
     ],
-    tips: [],
-    pithas: ['Bhapa', 'Patishapta', 'Puli'],
+    tips: [
+      'Serve alongside warm milk or hot tea for the perfect winter afternoon gathering.',
+      'Gently steam or warm for 2 minutes to restore fresh-from-the-hearth softness.',
+    ],
+    pithas: ['Nakshi', 'Patishapta', 'Puli'],
   },
 
   // ── Upcoming products ──────────────────────────────────────────────────────
