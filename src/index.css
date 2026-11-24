@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased selection:bg-forest/20 selection:text-forest;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif text-forest tracking-tight;
+  }
+}
+
+@layer components {
+  /* Editorial section label */
+  .section-label {
+    @apply text-[11px] font-sans font-semibold tracking-label uppercase text-warm-gray flex items-center gap-1.5;
+  }
+
+  /* Refined subtle divider */
+  .divider {
+    @apply border-t border-forest/10;
+  }
+
+  /* Fallback gradient */
+  .img-placeholder {
+    @apply bg-gradient-to-br from-pale-green via-cream to-peach;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Custom thin scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-forest/20 rounded-full hover:bg-forest/40 transition-colors;
+  }
+}
