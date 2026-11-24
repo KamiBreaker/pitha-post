@@ -5,6 +5,7 @@ import { pithas } from '../data/pithas';
 import ProductCard from '../components/ui/ProductCard';
 import SectionLabel from '../components/ui/SectionLabel';
 import AlpanaMotif from '../components/ui/AlpanaMotif';
+import { WaveDivider, ScallopDivider, AlpanaStripe } from '../components/ui/SectionDividers';
 import { businessConfig } from '../config/business';
 import { gradientContainerStyle, handleImgError } from '../utils/image';
 import { useCart } from '../context/CartContext';
@@ -22,13 +23,18 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-parchment">
+    <main className="bg-parchment overflow-x-hidden">
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Heritage Storytelling & Sourcing (Rich Terracotta & Forest Palette) */}
-      <section className="bg-forest text-parchment py-20 lg:py-28 relative overflow-hidden border-b-2 border-forest-deep">
-        {/* Background motif */}
+      {/* Decorative Organic Transition to Deep Forest */}
+      <div className="-mt-1 text-forest">
+        <WaveDivider className="text-forest" />
+      </div>
+
+      {/* 2. Heritage Storytelling & Sourcing (Rich Deep Forest Green) */}
+      <section className="bg-forest text-parchment py-16 lg:py-24 relative overflow-hidden">
+        {/* Subtle background alpana watermark */}
         <div className="absolute top-0 right-0 w-96 h-96 text-parchment/5 pointer-events-none">
           <AlpanaMotif className="w-full h-full" variant="seal" />
         </div>
@@ -56,19 +62,19 @@ export default function Home() {
                 We pair this unadulterated jaggery with freshly stone-milled fragrant <em>Atop</em> rice flour and fresh shredded coconut, portioned into clean, sealed kits ready for your steamer.
               </p>
 
-              {/* 3 Pillars Badge Strip */}
+              {/* Sourcing Pillars Strip */}
               <div className="grid sm:grid-cols-3 gap-4 pt-4 border-t border-parchment/15">
-                <div className="bg-parchment/10 rounded-xl p-4 border border-parchment/15">
+                <div className="bg-parchment/10 rounded-2xl p-4 border border-parchment/15">
                   <span className="text-2xl block mb-2">🍯</span>
                   <p className="font-serif font-bold text-sm text-mustard">Pure Khejur Gur</p>
                   <p className="text-xs text-parchment/70 mt-1">Direct from Jessore tappers with smoky aroma.</p>
                 </div>
-                <div className="bg-parchment/10 rounded-xl p-4 border border-parchment/15">
+                <div className="bg-parchment/10 rounded-2xl p-4 border border-parchment/15">
                   <span className="text-2xl block mb-2">🌾</span>
                   <p className="font-serif font-bold text-sm text-mustard">Stone-Milled Rice</p>
                   <p className="text-xs text-parchment/70 mt-1">Milled coarse on Thursdays for fluffy bhapa texture.</p>
                 </div>
-                <div className="bg-parchment/10 rounded-xl p-4 border border-parchment/15">
+                <div className="bg-parchment/10 rounded-2xl p-4 border border-parchment/15">
                   <span className="text-2xl block mb-2">📜</span>
                   <p className="font-serif font-bold text-sm text-mustard">Fool-Proof Recipes</p>
                   <p className="text-xs text-parchment/70 mt-1">Exact water-to-flour ratios so your batch never fails.</p>
@@ -76,7 +82,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Visual Composition */}
+            {/* Right Visual Composition with Overlapping Badge */}
             <div className="lg:col-span-6 relative">
               <div className="relative">
                 {/* Terracotta Decorative Backing */}
@@ -116,9 +122,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Product Showcase — The Winter Trio Box In Detail */}
+      {/* Decorative Wave Transition into Peach Box Section */}
+      <div className="-mt-1 text-peach">
+        <WaveDivider className="text-peach/80" />
+      </div>
+
+      {/* 3. Product Showcase — The Winter Trio Box */}
       {featured && (
-        <section className="bg-peach/70 py-20 lg:py-28 border-b-2 border-forest/15">
+        <section className="bg-peach/80 py-16 lg:py-24 relative border-b-2 border-forest/15">
           <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -396,7 +407,7 @@ export default function Home() {
               { n: '03', title: 'WhatsApp Check-in', desc: 'A formatted order link opens WhatsApp. Confirm bKash or cash.', icon: '💬' },
               { n: '04', title: 'Fresh Batch Dispatch', desc: 'Ingredients packed and dispatched for weekend morning arrival.', icon: '🛵' },
               { n: '05', title: 'No Auto-Billing', desc: 'You choose when to order next month. We never bill automatically.', icon: '✨' },
-            ].map((step, idx) => (
+            ].map((step) => (
               <div
                 key={step.n}
                 className="bg-parchment-light rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col justify-between gap-4"

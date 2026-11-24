@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { businessConfig } from '../../config/business';
@@ -12,11 +13,12 @@ const NAV_LINKS = [
 export default function Navbar() {
   const { itemCount, openCart } = useCart();
   const { pathname } = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-parchment/95 backdrop-blur-md border-b-2 border-forest/15 shadow-sm transition-all">
       {/* 1. Rich Berry Red Announcement Strip */}
-      <div className="bg-berry text-parchment-light text-xs font-sans font-medium tracking-wide py-2 px-4 border-b border-berry-dark/40 flex items-center justify-between">
+      <div className="bg-berry text-parchment-light text-xs font-sans font-medium tracking-wide py-2 px-4 border-b border-berry-dark/40">
         <div className="max-w-editorial mx-auto w-full flex items-center justify-between gap-4 px-2 sm:px-6">
           <div className="flex items-center gap-2">
             <span className="bg-mustard text-forest font-bold text-[10px] px-2 py-0.5 rounded-sm uppercase tracking-wider">
@@ -64,48 +66,85 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Navigation Links (Desktop) */}
+        <nav className="hidden md:flex items-center gap-3">
           {NAV_LINKS.map(({ label, bn, to }) => {
             const isActive = pathname === to;
             return (
               <Link
                 key={to}
                 to={to}
-                className={`flex flex-col items-center py-1 transition-all group ${
-                  isActive ? 'text-terracotta font-bold' : 'text-forest hover:text-terracotta'
+                className={`flex flex-col items-center px-4 py-2 rounded-xl transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-parchment-light text-terracotta font-bold border-2 border-forest shadow-sm'
+                    : 'text-forest hover:text-terracotta hover:bg-parchment-light/60'
                 }`}
               >
                 <span className="text-sm font-sans font-semibold tracking-wide">
                   {label}
                 </span>
-                <span className="text-[10px] font-bengali text-warm-gray group-hover:text-terracotta transition-colors">
+                <span className="text-[10px] font-bengali text-warm-gray">
                   {bn}
                 </span>
-                {isActive && (
-                  <span className="w-full h-0.5 bg-terracotta mt-0.5 rounded-full" />
-                )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Shopping Bag Trigger */}
-        <button
-          onClick={openCart}
-          aria-label="View shopping bag"
-          className="flex items-center gap-3 bg-mustard hover:bg-mustard-light text-forest px-5 py-2.5 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer font-bold"
-        >
-          <span className="text-xs uppercase tracking-wider font-mono">
-            Bag / ঝুলি
-          </span>
-          <span className={`w-6 h-6 rounded-full text-xs flex items-center justify-center font-black ${
-            itemCount > 0 ? 'bg-forest text-parchment' : 'bg-forest/15 text-forest'
-          }`}>
-            {itemCount}
-          </span>
-        </button>
+        {/* Right CTA / Bag Cluster */}
+        <div className="flex items-center gap-3">
+          {/* Shopping Bag Trigger */}
+          <button
+            onClick={openCart}
+            aria-label="View shopping bag"
+            className="flex items-center gap-2.5 bg-mustard hover:bg-mustard-light text-forest px-4 sm:px-5 py-2.5 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer font-bold"
+          >
+            <span className="text-xs uppercase tracking-wider font-mono">
+              Bag / ঝুলি
+            </span>
+            <span className={`w-6 h-6 rounded-full text-xs flex items-center justify-center font-black ${
+              itemCount > 0 ? 'bg-forest text-parchment' : 'bg-forest/15 text-forest'
+            }`}>
+              {itemCount}
+            </span>
+          </button>
+
+          {/* Mobile Menu Hamburger Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden w-10 h-10 rounded-xl border-2 border-forest bg-parchment-light flex flex-col items-center justify-center gap-1 cursor-pointer active:scale-95 transition-all"
+            aria-label="Toggle navigation menu"
+          >
+            <span className={`w-5 h-0.5 bg-forest transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span className={`w-5 h-0.5 bg-forest transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`w-5 h-0.5 bg-forest transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Drawer Navigation */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-parchment-light border-b-2 border-forest px-6 py-6 space-y-4">
+          {NAV_LINKS.map(({ label, bn, to }) => {
+            const isActive = pathname === to;
+            return (
+              <Link
+                key={to}
+                to={to}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
+                  isActive
+                    ? 'bg-parchment text-terracotta border-forest font-bold shadow-sm'
+                    : 'border-transparent text-forest hover:bg-parchment'
+                }`}
+              >
+                <span className="text-base font-serif font-bold">{label}</span>
+                <span className="text-xs font-bengali text-warm-gray">{bn}</span>
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </header>
   );
 }

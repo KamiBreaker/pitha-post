@@ -16,51 +16,51 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative bg-parchment overflow-hidden border-b-2 border-forest/15 pt-8 pb-16 lg:pt-14 lg:pb-24">
+    <section className="relative bg-parchment overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24">
       {/* Decorative Traditional Alpana motifs in background */}
-      <div className="absolute -top-12 -right-12 w-64 h-64 text-terracotta/10 pointer-events-none select-none">
+      <div className="absolute -top-16 -right-16 w-80 h-80 text-terracotta/10 pointer-events-none select-none">
         <AlpanaMotif className="w-full h-full" variant="seal" />
       </div>
-      <div className="absolute bottom-6 left-6 w-32 h-32 text-forest/5 pointer-events-none select-none">
+      <div className="absolute bottom-4 left-4 w-40 h-40 text-forest/5 pointer-events-none select-none">
         <AlpanaMotif className="w-full h-full" variant="flower" />
       </div>
 
       <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-          {/* Left Column: Expressive Editorial Storytelling */}
+          {/* Left Column: Expressive Editorial Headline & Value Prop */}
           <div className="lg:col-span-7 flex flex-col gap-6 lg:gap-8 z-10">
 
             {/* Cultural Dispatch Stamp */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-widest border border-forest-light shadow-sm flex items-center gap-1.5">
+              <span className="bg-forest text-mustard px-3.5 py-1.5 rounded-sm text-xs font-mono font-bold uppercase tracking-widest border border-forest-deep shadow-sm flex items-center gap-1.5">
                 <AlpanaMotif className="w-3.5 h-3.5 text-mustard" />
                 DAC POSTAL SERVICE &bull; WINTER 2026
               </span>
-              <span className="font-bengali text-xs font-bold text-terracotta bg-terracotta/10 px-3 py-1 rounded-sm border border-terracotta/20">
-                শীতের পিঠা তৈরি হোক ঘরের উনুনে
+              <span className="font-bengali text-xs font-bold text-terracotta bg-terracotta/10 px-3.5 py-1.5 rounded-sm border border-terracotta/20">
+                পৌষের পিঠা উৎসব &bull; ঘরে তৈরি হোক স্মৃতি
               </span>
             </div>
 
-            {/* Oversized Expressive Headline */}
+            {/* Oversized Expressive Headline with Editorial Rhythm */}
             <div className="space-y-1">
-              <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-black text-forest leading-[1.08] tracking-tight">
-                Three winter pithas,
+              <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-black text-forest leading-[1.06] tracking-tight">
+                Taste the winter ritual.
               </h1>
-              <div className="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal italic text-terracotta leading-[1.1]">
-                delivered raw &amp; fresh,
+              <div className="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal italic text-terracotta leading-[1.08]">
+                Authentic Bengali pithas,
               </div>
-              <div className="font-serif text-4xl sm:text-6xl xl:text-7xl font-black text-forest leading-[1.08] tracking-tight">
-                steamed at home.
+              <div className="font-serif text-4xl sm:text-6xl xl:text-7xl font-black text-forest leading-[1.06] tracking-tight">
+                delivered raw &amp; fresh.
               </div>
             </div>
 
-            {/* Value Proposition */}
-            <p className="text-forest/80 text-base sm:text-xl font-sans leading-relaxed max-w-xl">
-              Authentic <strong>Bhapa, Patishapta, and Puli</strong> kits &mdash; packed with farm-tapped Jessore date palm jaggery, coarse stone-ground rice flour, and grandma's secret step cards. <em>Serves six around the table.</em>
+            {/* Concise Value Proposition */}
+            <p className="text-forest/85 text-base sm:text-xl font-sans leading-relaxed max-w-xl">
+              Authentic <strong>Bhapa, Patishapta, and Puli</strong> kits &mdash; packed with farm-tapped Jessore date palm jaggery, coarse stone-ground rice flour, and illustrated step cards. <em>Serves six around the table.</em>
             </p>
 
-            {/* High-Contrast Interactive CTA Buttons */}
+            {/* Contrasting Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <button
                 onClick={handleGetKit}
@@ -72,24 +72,24 @@ export default function Hero() {
 
               <Link
                 to="/boxes"
-                className="inline-flex items-center justify-center gap-2 bg-parchment-light hover:bg-paddy/30 text-forest font-semibold text-sm px-6 py-4 rounded-full border-2 border-forest/30 transition-all hover:border-forest"
+                className="inline-flex items-center justify-center gap-2 bg-parchment-light hover:bg-mustard/20 text-forest font-bold text-sm px-7 py-4 rounded-full border-2 border-forest shadow-sm hover:shadow-stamp transition-all"
               >
                 <span>Browse All Kits / পিঠার বাক্স</span>
                 <span className="text-terracotta font-mono">&darr;</span>
               </Link>
             </div>
 
-            {/* Heritage Sourcing Strip */}
+            {/* Heritage Sourcing & Trust Strip */}
             <div className="pt-4 border-t-2 border-forest/10 grid grid-cols-3 gap-3 max-w-lg">
-              <div className="bg-parchment-light/80 border border-forest/15 rounded-lg p-3">
+              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
                 <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Origin</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-forest">Jessore Khejur Gur</span>
               </div>
-              <div className="bg-parchment-light/80 border border-forest/15 rounded-lg p-3">
+              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
                 <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Flour</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-forest">Stone-Ground Atop</span>
               </div>
-              <div className="bg-parchment-light/80 border border-forest/15 rounded-lg p-3">
+              <div className="bg-parchment-light/90 border-2 border-forest/15 rounded-xl p-3 shadow-sm">
                 <span className="block text-[10px] font-mono uppercase text-warm-gray font-bold">Policy</span>
                 <span className="font-serif font-bold text-xs sm:text-sm text-terracotta">Zero Auto-Renew</span>
               </div>
@@ -97,7 +97,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Immersive Asymmetric Food Photography */}
+          {/* Right Column: Immersive Overlapping Editorial Spread */}
           <div className="lg:col-span-5 relative">
             <div className="relative group">
               {/* Layered Accent Frame behind photo */}
@@ -116,7 +116,7 @@ export default function Hero() {
                 />
 
                 {/* Postage Stamp Sticker (Top Left) */}
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-mustard text-forest p-3 sm:p-4 rounded-2xl border-2 border-forest shadow-stamp transform -rotate-3 group-hover:rotate-0 transition-transform">
+                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-mustard text-forest p-3 sm:p-4 rounded-2xl border-2 border-forest shadow-stamp transform -rotate-3 group-hover:rotate-0 transition-transform select-none">
                   <span className="block text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-forest/70">
                     MONTHLY KIT &bull; মাসিক বক্স
                   </span>
@@ -129,9 +129,9 @@ export default function Hero() {
                 </div>
 
                 {/* Cultural Seal Pill (Bottom Right) */}
-                <div className="absolute bottom-4 right-4 bg-forest/90 backdrop-blur-md text-parchment px-4 py-2 rounded-full border border-mustard/40 flex items-center gap-2 text-xs font-mono">
+                <div className="absolute bottom-4 right-4 bg-forest/90 backdrop-blur-md text-parchment px-4 py-2 rounded-full border border-mustard/40 flex items-center gap-2 text-xs font-mono shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-mustard animate-pulse" />
-                  <span>FRESH BATCH PACKING</span>
+                  <span>LIMITED DHAKA BATCHES</span>
                 </div>
               </div>
 
@@ -143,7 +143,7 @@ export default function Hero() {
                     {featured?.name || 'The Winter Trio'} &bull; ভাপা &bull; পাটিসাপটা &bull; পুলি
                   </span>
                 </div>
-                <span className="font-serif italic text-xs text-terracotta font-semibold">
+                <span className="font-serif italic text-xs text-terracotta font-bold">
                   Serves 6 people
                 </span>
               </div>

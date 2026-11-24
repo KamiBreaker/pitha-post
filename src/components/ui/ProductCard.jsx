@@ -28,15 +28,15 @@ export default function ProductCard({ product, variant = 'default' }) {
         ${isFeatured
           ? 'bg-parchment-light shadow-stamp-terra ring-2 ring-terracotta/40'
           : isGift
-          ? 'bg-peach/80 shadow-stamp'
+          ? 'bg-peach/90 shadow-stamp'
           : 'bg-parchment-light shadow-stamp'
         }
         hover:-translate-y-1.5 hover:shadow-rich
       `}
     >
-      {/* Product Image Header with Postage Stamp Details */}
+      {/* Product Image Header */}
       <div
-        className="aspect-[4/3] w-full relative overflow-hidden bg-forest/10 border-b-2 border-forest"
+        className="aspect-[16/11] w-full relative overflow-hidden bg-forest/10 border-b-2 border-forest"
         style={gradientContainerStyle()}
       >
         <img
@@ -48,7 +48,7 @@ export default function ProductCard({ product, variant = 'default' }) {
         />
 
         {/* Badges Overlay */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 items-start">
+        <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10 items-start">
           {product.badge && (
             <span className="bg-mustard text-forest text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm border border-forest shadow-sm flex items-center gap-1">
               <AlpanaMotif className="w-2.5 h-2.5 text-forest" />
@@ -65,7 +65,7 @@ export default function ProductCard({ product, variant = 'default' }) {
         </div>
 
         {/* Price Stamp (Bottom Right) */}
-        <div className="absolute bottom-3 right-3 bg-parchment-light text-forest px-4 py-1.5 rounded-xl border-2 border-forest shadow-sm font-serif font-black text-lg sm:text-xl flex items-baseline gap-1">
+        <div className="absolute bottom-3.5 right-3.5 bg-parchment-light text-forest px-4 py-1.5 rounded-xl border-2 border-forest shadow-sm font-serif font-black text-lg sm:text-xl flex items-baseline gap-1 select-none">
           <span>{currency}{product.price.toLocaleString()}</span>
           <span className="text-[10px] font-sans font-normal text-warm-gray">
             {product.purchaseType === 'monthly' ? '/mo' : ''}
@@ -73,52 +73,50 @@ export default function ProductCard({ product, variant = 'default' }) {
         </div>
       </div>
 
-      {/* Product Body */}
-      <div className="flex flex-col flex-1 p-6 sm:p-7 gap-5 justify-between">
-        <div>
+      {/* Product Body — Refined Spacing & Breathing Room */}
+      <div className="flex flex-col flex-1 p-6 sm:p-8 gap-5 justify-between">
+        <div className="space-y-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <h3 className="font-serif text-2xl font-black text-forest group-hover:text-terracotta transition-colors">
+              <h3 className="font-serif text-2xl font-black text-forest group-hover:text-terracotta transition-colors leading-tight">
                 {product.name}
               </h3>
-              <p className="text-xs font-semibold text-terracotta tracking-wide mt-0.5">
+              <p className="text-xs font-semibold text-terracotta tracking-wide mt-1">
                 {product.tagline}
               </p>
             </div>
 
             {product.servings && (
-              <span className="bg-paddy/30 text-forest text-xs font-mono font-bold px-2.5 py-1 rounded-sm border border-forest/20 shrink-0">
-                {product.servings} Servings
+              <span className="bg-paddy/30 text-forest text-xs font-mono font-bold px-3 py-1 rounded-full border border-forest/20 shrink-0">
+                Serves {product.servings}
               </span>
             )}
           </div>
 
-          <p className="text-sm text-forest/80 leading-relaxed mt-3">
+          <p className="text-sm text-forest/80 leading-relaxed pt-1">
             {product.description}
           </p>
 
-          {/* Kit Ingredients Breakdown */}
-          <div className="mt-4 pt-4 border-t-2 border-forest/10 bg-parchment/60 -mx-2 px-3 py-3 rounded-xl border border-forest/10">
-            <p className="text-[10px] font-mono font-bold uppercase tracking-wider text-forest/70 mb-2 flex items-center gap-1.5">
-              <span>🌾</span>
-              <span>Ingredients in Box / বক্সের ভেতরের উপকরণ</span>
-            </p>
-            <ul className="text-xs text-forest/90 space-y-1.5">
+          {/* Clean Ingredient Pills (Replaces the dense cluttered table) */}
+          <div className="pt-3">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-forest/60 block mb-2">
+              Inside this box:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
               {product.includes.map((inc) => (
-                <li key={inc.item} className="flex items-start gap-2">
-                  <span className="text-terracotta font-bold">&bull;</span>
-                  <span>
-                    <strong className="font-semibold text-forest">{inc.item}</strong>
-                    {inc.note && <span className="text-warm-gray"> &mdash; {inc.note}</span>}
-                  </span>
-                </li>
+                <span
+                  key={inc.item}
+                  className="bg-parchment border border-forest/15 px-2.5 py-1 rounded-md text-xs text-forest/90 font-medium"
+                >
+                  {inc.item}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
         {/* Add to Bag Action */}
-        <div className="pt-2">
+        <div className="pt-3 border-t border-forest/10">
           <button
             onClick={handleAdd}
             className={`
