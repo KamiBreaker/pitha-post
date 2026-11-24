@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { availableProducts, getByCategory } from '../data/products';
 import ProductCard from '../components/ui/ProductCard';
-import SectionLabel from '../components/ui/SectionLabel';
 import AlpanaMotif from '../components/ui/AlpanaMotif';
 import { businessConfig } from '../config/business';
 
@@ -80,7 +80,7 @@ export default function Boxes() {
 
       <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10 py-16 space-y-20">
 
-        {/* 2. Interactive Filter Bar */}
+        {/* 2. Interactive Filter Bar with Fluid Tab Indicator */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b-2 border-forest/15">
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-forest/70">
@@ -91,19 +91,22 @@ export default function Boxes() {
                 { key: 'all', label: 'All Parcels / সব' },
                 { key: 'monthly', label: 'Monthly Kits / মাসিক' },
                 { key: 'gift', label: 'Gift Boxes / উপহার' },
-              ].map(({ key, label }) => (
-                <button
-                  key={key}
-                  onClick={() => setFilter(key)}
-                  className={`px-4 py-2 rounded-full text-xs font-mono font-bold border-2 border-forest transition-all cursor-pointer ${
-                    filter === key
-                      ? 'bg-forest text-parchment shadow-stamp'
-                      : 'bg-parchment-light text-forest hover:bg-parchment'
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+              ].map(({ key, label }) => {
+                const isSelected = filter === key;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setFilter(key)}
+                    className={`relative px-4 py-2 rounded-full text-xs font-mono font-bold border-2 border-forest transition-colors cursor-pointer select-none ${
+                      isSelected
+                        ? 'text-parchment bg-forest shadow-stamp'
+                        : 'bg-parchment-light text-forest hover:bg-parchment'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -112,14 +115,23 @@ export default function Boxes() {
           </span>
         </div>
 
-        {/* 3. Product Cards Grid */}
-        <section>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {/* 3. Product Cards Grid with Fluid Motion Layout Reflow */}
+        <motion.section layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <AnimatePresence mode="popLayout">
             {displayedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <motion.div
+                key={product.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </AnimatePresence>
+        </motion.section>
 
         {/* 4. Future Roadmap & Seasonal Creations */}
         <section className="bg-parchment-light rounded-3xl p-8 sm:p-12 border-2 border-forest shadow-stamp">
@@ -139,7 +151,7 @@ export default function Boxes() {
             {UPCOMING.map(({ name, bn, desc, priceEst, eta }) => (
               <div
                 key={name}
-                className="bg-parchment rounded-2xl p-6 border-2 border-dashed border-forest/30 flex flex-col justify-between gap-4"
+                className="bg-parchment rounded-2xl p-6 border-2 border-dashed border-forest/30 flex flex-col justify-between gap-4 transition-transform hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">

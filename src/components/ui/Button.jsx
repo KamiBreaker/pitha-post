@@ -1,10 +1,11 @@
-// Modern Bengali Heritage Tactile Button
+import { motion } from 'framer-motion';
+
 const VARIANTS = {
-  primary:   'bg-terracotta hover:bg-terracotta-deep text-parchment-light border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-  secondary: 'bg-mustard hover:bg-mustard-light text-forest border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-  forest:    'bg-forest hover:bg-forest-light text-parchment border-2 border-forest-deep shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-  outline:   'border-2 border-forest text-forest bg-parchment-light hover:bg-parchment active:translate-x-0.5 active:translate-y-0.5',
-  ghost:     'text-forest hover:text-terracotta active:scale-95',
+  primary:   'bg-terracotta hover:bg-terracotta-deep text-parchment-light border-2 border-forest shadow-stamp active:shadow-none',
+  secondary: 'bg-mustard hover:bg-mustard-light text-forest border-2 border-forest shadow-stamp active:shadow-none',
+  forest:    'bg-forest hover:bg-forest-light text-parchment border-2 border-forest-deep shadow-stamp active:shadow-none',
+  outline:   'border-2 border-forest text-forest bg-parchment-light hover:bg-parchment',
+  ghost:     'text-forest hover:text-terracotta',
 };
 
 const SIZES = {
@@ -21,15 +22,22 @@ export default function Button({
   as: Tag = 'button',
   ...props
 }) {
+  const Component = Tag === 'button' ? motion.button : Tag;
+  const motionProps = Tag === 'button' ? {
+    whileHover: { scale: 1.02 },
+    whileTap: { scale: 0.98 },
+  } : {};
+
   return (
-    <Tag
+    <Component
+      {...motionProps}
       className={`
-        inline-flex items-center justify-center gap-2 font-sans rounded-full transition-all duration-150 cursor-pointer
+        inline-flex items-center justify-center gap-2 font-sans rounded-full transition-colors cursor-pointer select-none
         ${VARIANTS[variant] ?? VARIANTS.primary} ${SIZES[size] ?? SIZES.md} ${className}
       `}
       {...props}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
 import { businessConfig } from '../../config/business';
 import AlpanaMotif from '../ui/AlpanaMotif';
@@ -39,17 +40,20 @@ export default function Navbar() {
 
       {/* 2. Main Navigation Bar */}
       <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between">
-        {/* Brand identity: bilingual typography & seal motif */}
+        {/* Brand identity */}
         <Link to="/" className="flex items-center gap-3.5 group">
-          {/* Postmark Seal Icon */}
-          <div className="w-12 h-12 rounded-full bg-forest text-parchment flex flex-col items-center justify-center border-2 border-terracotta shadow-stamp group-hover:bg-terracotta group-hover:border-forest transition-all duration-300">
+          <motion.div
+            whileHover={{ rotate: 12, scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 rounded-full bg-forest text-parchment flex flex-col items-center justify-center border-2 border-terracotta shadow-stamp group-hover:bg-terracotta group-hover:border-forest transition-colors duration-300"
+          >
             <span className="font-bengali font-bold text-lg leading-none text-mustard">
               পো
             </span>
             <span className="text-[8px] font-mono uppercase tracking-widest text-parchment/80">
               DAC
             </span>
-          </div>
+          </motion.div>
 
           <div>
             <div className="flex items-baseline gap-2">
@@ -66,21 +70,27 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Navigation Links (Desktop) */}
-        <nav className="hidden md:flex items-center gap-3">
+        {/* Fluid Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-2">
           {NAV_LINKS.map(({ label, bn, to }) => {
             const isActive = pathname === to;
             return (
               <Link
                 key={to}
                 to={to}
-                className={`flex flex-col items-center px-4 py-2 rounded-xl transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-parchment-light text-terracotta font-bold border-2 border-forest shadow-sm'
-                    : 'text-forest hover:text-terracotta hover:bg-parchment-light/60'
-                }`}
+                className="relative px-4 py-2 rounded-xl transition-all cursor-pointer group flex flex-col items-center"
               >
-                <span className="text-sm font-sans font-semibold tracking-wide">
+                {isActive && (
+                  <motion.div
+                    layoutId="activeNavPill"
+                    className="absolute inset-0 bg-parchment-light border-2 border-forest shadow-sm rounded-xl -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+
+                <span className={`text-sm font-sans font-bold tracking-wide transition-colors ${
+                  isActive ? 'text-terracotta' : 'text-forest group-hover:text-terracotta'
+                }`}>
                   {label}
                 </span>
                 <span className="text-[10px] font-bengali text-warm-gray">
@@ -93,11 +103,13 @@ export default function Navbar() {
 
         {/* Right CTA / Bag Cluster */}
         <div className="flex items-center gap-3">
-          {/* Shopping Bag Trigger */}
-          <button
+          {/* Shopping Bag Trigger with Tactile Tap Animation */}
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.95 }}
             onClick={openCart}
             aria-label="View shopping bag"
-            className="flex items-center gap-2.5 bg-mustard hover:bg-mustard-light text-forest px-4 sm:px-5 py-2.5 rounded-full border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer font-bold"
+            className="flex items-center gap-2.5 bg-mustard hover:bg-mustard-light text-forest px-4 sm:px-5 py-2.5 rounded-full border-2 border-forest shadow-stamp active:shadow-none transition-all cursor-pointer font-bold"
           >
             <span className="text-xs uppercase tracking-wider font-mono">
               Bag / ঝুলি
@@ -107,7 +119,7 @@ export default function Navbar() {
             }`}>
               {itemCount}
             </span>
-          </button>
+          </motion.button>
 
           {/* Mobile Menu Hamburger Toggle */}
           <button
@@ -115,36 +127,44 @@ export default function Navbar() {
             className="md:hidden w-10 h-10 rounded-xl border-2 border-forest bg-parchment-light flex flex-col items-center justify-center gap-1 cursor-pointer active:scale-95 transition-all"
             aria-label="Toggle navigation menu"
           >
-            <span className={`w-5 h-0.5 bg-forest transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-            <span className={`w-5 h-0.5 bg-forest transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`w-5 h-0.5 bg-forest transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <span className={`w-5 h-0.5 bg-forest transition-transform duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span className={`w-5 h-0.5 bg-forest transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`w-5 h-0.5 bg-forest transition-transform duration-200 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-parchment-light border-b-2 border-forest px-6 py-6 space-y-4">
-          {NAV_LINKS.map(({ label, bn, to }) => {
-            const isActive = pathname === to;
-            return (
-              <Link
-                key={to}
-                to={to}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center justify-between p-3 rounded-xl border-2 transition-all ${
-                  isActive
-                    ? 'bg-parchment text-terracotta border-forest font-bold shadow-sm'
-                    : 'border-transparent text-forest hover:bg-parchment'
-                }`}
-              >
-                <span className="text-base font-serif font-bold">{label}</span>
-                <span className="text-xs font-bengali text-warm-gray">{bn}</span>
-              </Link>
-            );
-          })}
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden bg-parchment-light border-b-2 border-forest px-6 py-5 space-y-3 overflow-hidden"
+          >
+            {NAV_LINKS.map(({ label, bn, to }) => {
+              const isActive = pathname === to;
+              return (
+                <Link
+                  key={to}
+                  to={to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between p-3.5 rounded-xl border-2 transition-all ${
+                    isActive
+                      ? 'bg-parchment text-terracotta border-forest font-bold shadow-sm'
+                      : 'border-transparent text-forest hover:bg-parchment'
+                  }`}
+                >
+                  <span className="text-base font-serif font-bold">{label}</span>
+                  <span className="text-xs font-bengali text-warm-gray">{bn}</span>
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

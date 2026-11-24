@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQS = [
   {
@@ -42,17 +43,32 @@ function FAQItem({ q, a }) {
         <span className="font-serif text-lg font-bold text-forest group-hover:text-terracotta transition-colors">
           {q}
         </span>
-        <span className={`w-7 h-7 rounded-full border-2 border-forest flex items-center justify-center font-mono font-bold text-sm shrink-0 transition-all ${
-          open ? 'bg-forest text-parchment' : 'bg-parchment text-forest group-hover:bg-mustard'
-        }`}>
-          {open ? '−' : '+'}
-        </span>
+        <motion.span
+          animate={{ rotate: open ? 45 : 0 }}
+          transition={{ duration: 0.2 }}
+          className={`w-7 h-7 rounded-full border-2 border-forest flex items-center justify-center font-mono font-bold text-sm shrink-0 transition-colors ${
+            open ? 'bg-forest text-parchment' : 'bg-parchment text-forest group-hover:bg-mustard'
+          }`}
+        >
+          +
+        </motion.span>
       </button>
-      {open && (
-        <div className="mt-3.5 text-sm text-forest/80 leading-relaxed pr-6 bg-parchment/60 p-4 rounded-xl border border-forest/10 animate-fadeIn">
-          {a}
-        </div>
-      )}
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="mt-3.5 text-sm text-forest/80 leading-relaxed pr-6 bg-parchment/60 p-4 rounded-xl border border-forest/10">
+              {a}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
