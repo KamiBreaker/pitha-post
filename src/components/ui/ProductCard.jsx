@@ -73,7 +73,7 @@ export default function ProductCard({ product, variant = 'default' }) {
         </div>
       </div>
 
-      {/* Product Body — Refined Spacing & Breathing Room */}
+      {/* Product Body: Spacing & Content */}
       <div className="flex flex-col flex-1 p-6 sm:p-8 gap-5 justify-between">
         <div className="space-y-3">
           <div className="flex items-start justify-between gap-3">

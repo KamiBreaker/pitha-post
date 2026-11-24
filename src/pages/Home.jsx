@@ -55,11 +55,11 @@ export default function Home() {
               </h2>
 
               <p className="text-parchment/80 text-base sm:text-lg leading-relaxed">
-                Before dawn in rural Jessore, tree-tappers (<em>গাছি</em>) scale ancient date palms to harvest the clear, nectar-like morning sap. Simmered for hours over earthen hearths, it turns into pure, smoky <strong>Khejur Gur</strong> &mdash; with zero sugar syrups or chemical adulteration.
+                Before dawn in rural Jessore, tree-tappers (<em>গাছি</em>) scale date palms to harvest the fresh morning sap. Simmered over earthen hearths, it turns into rich, smoky <strong>Khejur Gur</strong> with no added sugar syrups or chemicals.
               </p>
 
               <p className="text-parchment/80 text-base leading-relaxed">
-                We pair this unadulterated jaggery with freshly stone-milled fragrant <em>Atop</em> rice flour and fresh shredded coconut, portioned into clean, sealed kits ready for your steamer.
+                We pair this pure date palm jaggery with stone-milled fragrant <em>Atop</em> rice flour and fresh shredded coconut, sealed into neat kits ready for your steamer.
               </p>
 
               {/* Sourcing Pillars Strip */}
@@ -127,7 +127,7 @@ export default function Home() {
         <WaveDivider className="text-cream" />
       </div>
 
-      {/* 3. Product Showcase — The Winter Trio Box (Muted Cream Background) */}
+      {/* 3. Product Showcase: The Winter Trio Box (Muted Cream Background) */}
       {featured && (
         <section className="bg-cream py-16 lg:py-24 relative border-b-2 border-forest/15">
           <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
@@ -252,7 +252,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-sm sm:text-base text-forest/70 max-w-md">
-              Each pitha carries a distinct heritage technique &mdash; from steaming in layered muslin to golden crêpe folding.
+              Each pitha has its own traditional method, from steaming in layered muslin to rolling thin golden crêpes.
             </p>
           </div>
 
@@ -315,7 +315,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Why Pitha Post — Market Hassle vs Artisanal Parcel */}
+      {/* 5. Why Pitha Post: Market Hassle vs Fresh Box */}
       <section className="bg-forest-deep text-parchment py-20 lg:py-28 border-b-2 border-forest">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
           <div className="max-w-2xl mb-16">
@@ -342,15 +342,15 @@ export default function Home() {
               <ul className="space-y-3.5 text-sm text-parchment/70">
                 <li className="flex items-start gap-3">
                   <span className="text-terracotta font-bold text-base">&times;</span>
-                  <span>Unreliable jaggery &mdash; most bazaar gur is diluted with white cane sugar and chemical soda.</span>
+                  <span>Unreliable jaggery: most bazaar gur is diluted with cane sugar and soda.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-terracotta font-bold text-base">&times;</span>
-                  <span>Milling delays &mdash; finding a mill that grinds coarse Atop rice flour without burning it is nearly impossible.</span>
+                  <span>Milling delays: finding a mill that grinds coarse Atop rice flour without overheating it is tough.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-terracotta font-bold text-base">&times;</span>
-                  <span>Street stall pitha is prepared hours beforehand, wrapped in newspapers, and turns cold and soggy.</span>
+                  <span>Street pitha is cooked hours beforehand, wrapped in newspapers, and turns cold and soggy.</span>
                 </li>
               </ul>
             </div>
@@ -361,20 +361,20 @@ export default function Home() {
                 THE PITHA POST PROMISE
               </span>
               <h3 className="font-serif text-2xl font-bold text-forest mb-4">
-                The Curated Monthly Box
+                The Monthly Box
               </h3>
               <ul className="space-y-3.5 text-sm text-forest/90">
                 <li className="flex items-start gap-3">
                   <span className="text-forest font-bold text-base">✓</span>
-                  <span><strong>100% Raw Jessore Nolen Gur</strong> &mdash; single-estate winter jaggery with deep caramel undertones.</span>
+                  <span><strong>Pure Jessore Nolen Gur:</strong> natural winter jaggery with deep caramel undertones.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-forest font-bold text-base">✓</span>
-                  <span><strong>Fresh Thursday Milling</strong> &mdash; exact moisture content so your bhapa is cloud-soft, never hard.</span>
+                  <span><strong>Fresh Thursday Milling:</strong> balanced moisture content so your bhapa is cloud-soft, never hard.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-forest font-bold text-base">✓</span>
-                  <span><strong>Hot from your own stove</strong> &mdash; 30 minutes on weekend mornings with the family gathered around.</span>
+                  <span><strong>Hot from your own stove:</strong> ready in about 30 minutes on weekend mornings.</span>
                 </li>
               </ul>
             </div>

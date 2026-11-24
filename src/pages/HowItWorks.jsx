@@ -17,7 +17,7 @@ export default function HowItWorks() {
               A modern D2C food model built on human trust.
             </h1>
             <p className="text-forest/80 text-base sm:text-lg mt-4 leading-relaxed">
-              Designed specifically for Dhaka: zero payment gateway friction, manual monthly opt-ins, and artisanal batch sourcing from Jessore&rsquo;s date palm groves.
+              Built for Dhaka: no payment gateway hassle, no auto-rebilling, and fresh ingredients sourced straight from Jessore date palm tappers.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Link

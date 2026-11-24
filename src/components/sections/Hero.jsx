@@ -57,7 +57,7 @@ export default function Hero() {
 
             {/* Concise Value Proposition */}
             <p className="text-forest/85 text-base sm:text-xl font-sans leading-relaxed max-w-xl">
-              Authentic <strong>Bhapa, Patishapta, and Puli</strong> kits &mdash; packed with farm-tapped Jessore date palm jaggery, coarse stone-ground rice flour, and illustrated step cards. <em>Serves six around the table.</em>
+              Fresh <strong>Bhapa, Patishapta, and Puli</strong> kits packed with Jessore date palm jaggery, coarse stone-ground rice flour, and illustrated step cards. <em>Serves six around the table.</em>
             </p>
 
             {/* Contrasting Action Buttons */}

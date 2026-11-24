@@ -2,23 +2,6 @@
 // ADDING A NEW PRODUCT: add one object here. The website renders it automatically.
 // ADDING AN IMAGE:      drop the file into public/images/kits/ and set the image field.
 // No other files need to change.
-//
-// Schema:
-//   id           – URL-safe unique slug
-//   name         – Display name
-//   purchaseType – 'monthly' | 'one-time'
-//   category     – 'subscription' | 'gift' | 'seasonal'  (grouping / filtering)
-//   available    – set false to hide from catalogue without deleting
-//   featured     – highlights one product in the hero
-//   price        – in BDT (integer)
-//   servings     – number of people, or null for gift boxes
-//   tagline      – one short sentence used in cards
-//   description  – two-sentence product description
-//   badge        – pill label, or null
-//   image        – path under /public  e.g. '/images/kits/winter-trio.webp'
-//   includes     – array of { item, note } objects shown in the kit contents list
-//   tips         – array of short tip strings shown on the How It Works page
-//   pithas       – array of pitha variety names this kit covers
 
 export const products = [
   {
@@ -35,10 +18,10 @@ export const products = [
     badge:        null,
     image:        '/images/kits/bhapa-starter.webp',
     includes: [
-      { item: 'Rice flour',        note: 'Soft, finely milled for tender pitha' },
-      { item: 'Khejur gur',        note: 'Deep, mellow date palm sweetness' },
-      { item: 'Coconut',           note: 'For a fragrant, tender filling' },
-      { item: 'Bhapa recipe card', note: 'Step by step' },
+      { item: 'Rice flour',        note: 'Finely milled for soft, tender pitha' },
+      { item: 'Khejur gur',        note: 'Pure Jessore date palm molasses' },
+      { item: 'Fresh coconut',     note: 'Grated and sealed for filling' },
+      { item: 'Recipe card',       note: 'Simple step-by-step instructions' },
     ],
     tips: [
       'Add water gradually and rub the rice flour into soft crumbs.',
@@ -56,15 +39,15 @@ export const products = [
     featured:     true,
     price:        1150,
     servings:     6,
-    tagline:      'Three pithas. One sweet box.',
-    description:  'Bhapa, Patishapta and Puli kit serving 6 people. The full Bengali winter experience in a single parcel.',
+    tagline:      'Three classic pithas in one box.',
+    description:  'Everything you need to make Bhapa, Patishapta, and Puli for 6 people. A complete winter feast for the family.',
     badge:        'Most Popular',
     image:        '/images/kits/winter-trio.webp',
     includes: [
-      { item: 'Rice flour',              note: 'Soft, finely milled for tender pitha' },
-      { item: 'Khejur gur',              note: 'Deep, mellow date palm sweetness' },
-      { item: 'Coconut',                 note: 'For a fragrant, tender filling' },
-      { item: 'Three-pitha recipe card', note: 'Bhapa, patishapta and puli — step by step' },
+      { item: 'Rice flour',              note: 'Stone-milled Atop flour for light texture' },
+      { item: 'Khejur gur',              note: 'Smoky date palm jaggery from Jessore' },
+      { item: 'Fresh coconut',           note: 'Grated and sealed for fillings' },
+      { item: 'Three-pitha recipe card', note: 'Step-by-step for Bhapa, Patishapta, and Puli' },
     ],
     tips: [
       'For bhapa, keep the flour fluffy.',
@@ -83,53 +66,53 @@ export const products = [
     featured:     false,
     price:        900,
     servings:     null,
-    tagline:      'Send winter to someone you love.',
-    description:  'An artisanal festive assortment — handcrafted Nakshi, Patishapta, Puli, and heritage winter sweets in a presentation box.',
+    tagline:      'Send warm winter pithas to someone special.',
+    description:  'A ready-to-share gift platter with handcrafted Nakshi, Patishapta, Puli, and traditional winter sweets in festive packaging.',
     badge:        'Gift Box',
     image:        '/images/kits/gift-a-box.webp',
     includes: [
-      { item: 'Heritage Pitha Assortment', note: 'Nakshi, Patishapta, Puli & festive winter delights' },
+      { item: 'Festive Pitha Assortment', note: 'Handcrafted Nakshi, Patishapta, Puli, and winter sweets' },
       { item: 'Jessore Nolen Gur dip',    note: 'Pure smoky date palm molasses' },
-      { item: 'Artisanal Keepsake Box',    note: 'Festive packaging with personalized winter greeting note' },
-      { item: 'Gift recipe booklet',       note: 'Heritage folklore and reheating instructions' },
+      { item: 'Gift presentation box',    note: 'Festive box with custom handwritten greeting card' },
+      { item: 'Recipe booklet',           note: 'Traditional pitha stories and serving suggestions' },
     ],
     tips: [
-      'Serve alongside warm milk or hot tea for the perfect winter afternoon gathering.',
-      'Gently steam or warm for 2 minutes to restore fresh-from-the-hearth softness.',
+      'Serve alongside warm tea or milk for weekend family gatherings.',
+      'Warm gently for two minutes to bring out the fresh jaggery aroma.',
     ],
     pithas: ['Nakshi', 'Patishapta', 'Puli'],
   },
 
   // ── Upcoming products ──────────────────────────────────────────────────────
-  // Uncomment and fill in details when ready. The catalogue renders them automatically.
-  //
-  // {
-  //   id:           'family-feast',
-  //   name:         'Family Feast',
-  //   purchaseType: 'monthly',
-  //   category:     'subscription',
-  //   available:    false,  // set true when ready to publish
-  //   featured:     false,
-  //   price:        1800,
-  //   servings:     12,
-  //   tagline:      'Five pithas for a large gathering.',
-  //   description:  'The full Pitha Post range for bigger tables.',
-  //   badge:        'Coming Soon',
-  //   image:        '/images/kits/family-feast.webp',
-  //   includes: [],
-  //   tips: [],
-  //   pithas: ['Bhapa', 'Patishapta', 'Puli', 'Chitoi', 'Dudh Pitha'],
-  // },
+  {
+    id:           'chitoi-kit',
+    name:         'Chitoi & Bhorta Duo',
+    purchaseType: 'monthly',
+    category:     'seasonal',
+    available:    false,
+    featured:     false,
+    price:        750,
+    servings:     4,
+    tagline:      'Savory winter mornings.',
+    description:  'Clay pan and stone-milled rice flour kit for round, spongy chitoi pitha, paired with three dry-fish and mustard bhortas.',
+    badge:        'Coming in January',
+    image:        '/images/kits/bhapa-starter.webp',
+    includes: [
+      { item: 'Coarse rice flour', note: 'For high-sponge chitoi crust' },
+      { item: 'Shutki bhorta mix', note: 'Spicy dried Loitta blend' },
+      { item: 'Mustard seed paste', note: 'Pungent cold-pressed mash' },
+      { item: 'Clay pan (shora)',  note: 'Handmade earthen baking lid' },
+    ],
+    tips: [
+      'Heat the clay lid until smoking before pouring the batter.',
+      'Splash water around the rim for steam pockets.',
+    ],
+    pithas: ['Chitoi'],
+  },
 ];
 
-// ─── Derived helpers ──────────────────────────────────────────────────────────
-/** All products currently visible in the catalogue */
+// Helper functions for easy consumption across components
+export const getProductById = (id) => products.find((p) => p.id === id);
+export const getFeaturedProduct = () => products.find((p) => p.featured) || products[0];
+export const getByCategory = (cat) => products.filter((p) => p.category === cat && p.available);
 export const availableProducts = products.filter((p) => p.available);
-
-/** Products grouped by category */
-export function getByCategory(category) {
-  return availableProducts.filter((p) => p.category === category);
-}
-
-export const getProductById  = (id)  => products.find((p) => p.id === id);
-export const getFeaturedProduct      = ()   => availableProducts.find((p) => p.featured);

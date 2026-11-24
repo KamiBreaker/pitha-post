@@ -1,7 +1,6 @@
 // ─── Individual Pitha Varieties ───────────────────────────────────────────────
 // Editorial data for the three classic Bengali winter pithas.
 // Used by OurStory, Home ("three lovely ways") and any future pitha guide pages.
-// Separate from product kit data — a kit may contain multiple pitha varieties.
 
 export const pithas = [
   {
@@ -31,8 +30,8 @@ export const pithas = [
       "Quick to make and even quicker to disappear.",
     image:    '/images/pitha/patishapta.webp',
     tips: [
-      'Keep the batter thin — whisk with milk until it pours easily.',
-      'Cook on a low flame so the crêpe stays pale and doesn\'t colour too fast.',
+      'Keep the batter thin: whisk with milk until it pours easily.',
+      'Cook on a low flame so the crêpe stays pale and does not colour too fast.',
     ],
     includedIn: ['winter-trio', 'gift-a-box'],
   },
@@ -42,12 +41,12 @@ export const pithas = [
     subtitle: 'Little sweet parcels',
     tagline:  'Half-moon dumplings, sealed with care.',
     description:
-      "Half-moon dumplings sealed tightly around a coconut-gur filling — " +
-      "either boiled in sugar syrup or fried until golden. " +
-      "Both methods use the same kit. The name means 'small parcel' and the shape says everything.",
+      "Half-moon dumplings sealed tightly around a coconut-gur filling, " +
+      "either boiled in milk or sugar syrup, or fried until golden. " +
+      "Both methods use the same kit.",
     image:    '/images/pitha/puli-pitha.webp',
     tips: [
-      'Seal the edges firmly — a little water on your fingertip helps.',
+      'Seal the edges firmly; a little water on your fingertip helps.',
       'For boiled puli, the syrup should be gently simmering, not rolling.',
     ],
     includedIn: ['winter-trio', 'gift-a-box'],

@@ -41,7 +41,7 @@ export function generateWhatsAppUrl({ items, customer, total }) {
   const itemLines = items
     .map(
       (i) =>
-        `  • ${i.name} × ${i.quantity} — ${currency}${(
+        `  • ${i.name} × ${i.quantity}: ${currency}${(
           i.price * i.quantity
         ).toLocaleString()}`
     )

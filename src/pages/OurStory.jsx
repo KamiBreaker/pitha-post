@@ -31,15 +31,15 @@ export default function OurStory() {
                 In the rural winter mornings of Bengal, the hearth was never cold. Grandmothers and aunts sat beside clay steaming pots, carefully sifting fresh rice flour through handwoven wicker strainers, layering fragrant grated coconut with dark, caramelized molasses tapped only hours before.
               </p>
               <p>
-                As life accelerated in Dhaka, that sacred ritual was lost to chaotic grocery runs, adulterated factory syrups, and rubbery street pitha wrapped in old newspapers. The joy was replaced by exhaustion.
+                As life got busier in Dhaka, that tradition became harder to keep up. Making pitha meant multiple bazaar trips, and street-side pitha was often cold and made with diluted sugar syrup.
               </p>
               <div className="bg-parchment/10 rounded-2xl p-6 border-l-4 border-mustard my-4">
                 <p className="font-serif italic text-mustard text-xl leading-relaxed">
-                  &ldquo;Pitha Post was born to bring the aroma of winter back to urban kitchens. By sourcing directly from Jessore palm-tappers and pre-portioning heritage ingredients, we make sure making pitha at home is a 30-minute pleasure, not a 3-day chore.&rdquo;
+                  &ldquo;Pitha Post started with a simple idea: bringing winter pitha back to home kitchens. By sourcing directly from Jessore tappers and measuring out the ingredients, making pitha is quick, simple, and fun for the family.&rdquo;
                 </p>
               </div>
               <p>
-                Each weekly batch is packed by hand in small, sealed boxes. We verify the sweetness of our date molasses, mill our rice flour fresh on Thursdays, and enclose waterproof keepsake recipe cards so even first-timers make pitha with confidence.
+                Each batch is packed fresh in sealed boxes. We test our date molasses for purity, mill our rice flour on Thursdays, and include clear recipe cards so anyone can make pitha at home with confidence.
               </p>
             </div>
           </div>

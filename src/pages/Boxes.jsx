@@ -16,7 +16,7 @@ const UPCOMING = [
   {
     name: 'Patishapta Special',
     bn: 'পাটিসাপটা স্পেশাল',
-    desc: 'Double batch stone-milled batter accompanied by three artisanal fillings: kheer, grated coconut, and date jaggery.',
+    desc: 'Double batch stone-milled batter with three classic fillings: kheer, grated coconut, and date jaggery.',
     priceEst: '৳850',
     eta: 'Coming Soon',
   },
@@ -63,7 +63,7 @@ export default function Boxes() {
               </span>
             </h1>
             <p className="text-forest/80 text-base sm:text-lg mt-4 leading-relaxed">
-              Every box is packed with stone-milled fragrant Atop rice flour, unadulterated Jessore date palm molasses, and keepsake step cards.
+              Every box comes with stone-milled Atop rice flour, pure Jessore date palm gur, and easy step-by-step recipe cards.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3 text-xs font-mono font-bold text-forest">

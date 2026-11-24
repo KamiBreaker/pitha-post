@@ -51,10 +51,10 @@ export function handleImgError(category) {
     const fallback = getCategoryFallback(category);
 
     if (fallback && img.src !== window.location.origin + fallback) {
-      // First failure — try category fallback
+      // First failure: try category fallback
       img.src = fallback;
     } else {
-      // Second failure — hide img and let CSS gradient show
+      // Second failure: hide img and let CSS gradient show
       img.style.display = 'none';
     }
   };
