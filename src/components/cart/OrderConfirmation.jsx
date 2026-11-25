@@ -1,9 +1,9 @@
 import { useCart } from '../../context/CartContext';
-import { businessConfig } from '../../config/business';
-import AlpanaMotif from '../ui/AlpanaMotif';
+import { generateWhatsAppUrl } from '../../config/business';
 
 export default function OrderConfirmation() {
-  const { clearCart, closeCart } = useCart();
+  const { items, customer, total, clearCart, closeCart } = useCart();
+  const whatsappUrl = generateWhatsAppUrl({ items, customer, total });
 
   function handleDone() {
     clearCart();
@@ -50,12 +50,23 @@ export default function OrderConfirmation() {
         <strong>Remember:</strong> This subscription never auto-renews. You decide when to confirm next month&rsquo;s delivery.
       </div>
 
-      <button
-        onClick={handleDone}
-        className="w-full py-4 rounded-full font-bold text-xs uppercase tracking-wider bg-forest hover:bg-forest-light text-parchment border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
-      >
-        Done / সম্পন্ন
-      </button>
+      <div className="w-full flex flex-col gap-2.5">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider bg-terracotta hover:bg-terracotta-deep text-parchment-light border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all text-center"
+        >
+          Open WhatsApp Chat &rarr;
+        </a>
+
+        <button
+          onClick={handleDone}
+          className="w-full py-4 rounded-full font-bold text-xs uppercase tracking-wider bg-forest hover:bg-forest-light text-parchment border-2 border-forest shadow-stamp active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer"
+        >
+          Done / সম্পন্ন
+        </button>
+      </div>
     </div>
   );
 }

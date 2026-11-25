@@ -10,7 +10,7 @@ export const businessConfig = {
   // ⚠️  Replace with the actual WhatsApp business number before deployment.
   // Format: country code + number, no spaces, no plus sign.
   // Bangladesh example: 8801XXXXXXXXX
-  whatsappNumber: '8801XXXXXXXXX',
+  whatsappNumber: '8801581501077',
 
   orderCutoffDay: 25,          // Customers must order/skip before the 25th
   deliveryArea: 'Dhaka',
