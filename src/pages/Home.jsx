@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Hero from '../components/sections/Hero';
 import { Link } from 'react-router-dom';
-import { getFeaturedProduct, availableProducts } from '../data/products';
+import { getFeaturedProduct, getProductById, availableProducts } from '../data/products';
 import { pithas } from '../data/pithas';
 import ProductCard from '../components/ui/ProductCard';
 import SectionLabel from '../components/ui/SectionLabel';
@@ -12,12 +13,17 @@ import { useCart } from '../context/CartContext';
 
 export default function Home() {
   const featured = getFeaturedProduct();
+  const comboBox = getProductById('teler-pakon-box');
+  const featuredOptions = [featured, comboBox].filter(Boolean);
+  const [selectedParcelId, setSelectedParcelId] = useState(featured?.id || 'winter-trio');
+  const activeParcel = featuredOptions.find((p) => p.id === selectedParcelId) || featured;
+
   const { addItem, openCart } = useCart();
   const { currency } = businessConfig;
 
   function handleAddFeatured() {
-    if (featured) {
-      addItem(featured, 1);
+    if (activeParcel) {
+      addItem(activeParcel, 1);
       openCart();
     }
   }
@@ -127,41 +133,69 @@ export default function Home() {
         <WaveDivider className="text-cream" />
       </div>
 
-      {/* 3. Product Showcase: The Winter Trio Box (Muted Cream Background) */}
-      {featured && (
+      {/* 3. Product Showcase: Featured Parcels (Muted Cream Background) */}
+      {activeParcel && (
         <section className="bg-cream py-16 lg:py-24 relative border-b-2 border-forest/15">
           <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
               {/* Left Details */}
               <div className="lg:col-span-5 flex flex-col gap-6">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="bg-forest text-mustard px-3 py-1 rounded-sm text-xs font-mono font-bold uppercase tracking-wider border border-forest-deep">
                     FEATURED PARCEL &bull; বিশেষ বক্স
                   </span>
                 </div>
 
+                {featuredOptions.length > 1 && (
+                  <div className="inline-flex flex-wrap gap-2" role="tablist" aria-label="Featured parcels">
+                    {featuredOptions.map((option) => {
+                      const isActive = option.id === activeParcel.id;
+                      return (
+                        <button
+                          key={option.id}
+                          type="button"
+                          role="tab"
+                          aria-selected={isActive}
+                          onClick={() => setSelectedParcelId(option.id)}
+                          className={`px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider border-2 transition-all cursor-pointer ${
+                            isActive
+                              ? 'bg-terracotta text-parchment-light border-forest shadow-stamp'
+                              : 'bg-parchment text-forest border-forest/30 hover:border-forest'
+                          }`}
+                        >
+                          {option.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
                 <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest leading-tight">
                   Inside the parcel:{' '}
                   <span className="italic font-normal text-terracotta">
-                    Three pithas, one sweet box.
+                    {activeParcel.id === 'teler-pakon-box'
+                      ? 'Two golden fried classics, one box.'
+                      : 'Three pithas, one sweet box.'}
                   </span>
                 </h2>
 
                 <p className="text-forest/80 text-base leading-relaxed">
-                  No wandering through five different grocery alleys. Everything is weighed, sealed, and verified. You only need drinking water, a pinch of salt, a splash of milk for the crêpes, and a steamer.
+                  {activeParcel.id === 'teler-pakon-box'
+                    ? 'Crisp, hand-carved Pakon Pitha and puffed Teler Pitha in one ready-to-fry box. Everything is weighed and sealed; you only need oil and warm water.'
+                    : 'No wandering through five different grocery alleys. Everything is weighed, sealed, and verified. You only need drinking water, a pinch of salt, a splash of milk for the crêpes, and a steamer.'}
                 </p>
 
                 {/* Price and Cart Action Card */}
                 <div className="bg-parchment rounded-2xl p-6 border-2 border-forest shadow-stamp flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <span className="text-xs font-mono font-bold uppercase text-brown/70">
-                      {featured.name} &bull; Serves {featured.servings}
+                      {activeParcel.name} &bull; Serves {activeParcel.servings}
                     </span>
                     <p className="font-serif text-3xl font-black text-forest mt-0.5">
-                      {currency}{featured.price.toLocaleString()}
+                      {currency}{activeParcel.price.toLocaleString()}
                       <span className="text-xs font-sans font-normal text-brown/70 ml-1">
-                        / monthly box
+                        {activeParcel.purchaseType === 'monthly' ? '/ monthly box' : '/ one-time box'}
                       </span>
                     </p>
                   </div>
@@ -176,7 +210,11 @@ export default function Home() {
 
                 <p className="text-xs text-forest/70 flex items-center gap-2 font-mono">
                   <span>📅</span>
-                  <span>Orders close on the 25th each month. Delivered fresh for weekend gatherings.</span>
+                  <span>
+                    {activeParcel.purchaseType === 'monthly'
+                      ? 'Orders close on the 25th each month. Delivered fresh for weekend gatherings.'
+                      : 'Dispatched fresh in weekly batches across Dhaka. Ready for gifting or weekend tea.'}
+                  </span>
                 </p>
               </div>
 
@@ -198,7 +236,7 @@ export default function Home() {
                   </div>
 
                   <div className="divide-y-2 divide-forest/10 mt-2">
-                    {featured.includes.map((inc, i) => (
+                    {activeParcel.includes.map((inc, i) => (
                       <div
                         key={inc.item}
                         className="py-4 flex items-center justify-between gap-4 group hover:bg-cream px-4 -mx-4 rounded-xl transition-colors"
