@@ -7,7 +7,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Choose your kit',
-    body: 'Select your preferred winter assortment: single-variety Bhapa Starter, the iconic Winter Trio, or a one-time Gift Box.',
+    body: 'Select your preferred winter assortment: Bhapa, Malpoa, Teler, Pakon, the Winter Trio, or a one-time Gift Box.',
     icon: '📦',
     tag: 'Discovery',
   },
@@ -60,7 +60,7 @@ const CANVAS = [
   },
   {
     label: 'Revenue Model',
-    value: 'Subscription boxes (৳650–৳1,150/mo) with manual opt-in renewal, alongside one-time seasonal gift parcels (৳900). Zero payment gateway transaction fees.',
+    value: 'Subscription boxes (৳600 to ৳1,150/mo) with manual opt-in renewal, alongside one-time gift boxes (৳900 to ৳950). Zero payment gateway transaction fees.',
     icon: '💳',
   },
   {

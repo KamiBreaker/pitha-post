@@ -54,10 +54,10 @@ export default function OurStory() {
               HERITAGE RECIPE SHOWCASE
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest">
-              The Three Winter Pillars
+              Signature Winter Classics
             </h2>
             <p className="text-forest/70 text-base mt-2">
-              Mastering the delicate culinary textures of Bengali winter.
+              A closer look at our core winter pithas, alongside seasonal Malpoa, Teler Pitha, and Pakon Pitha.
             </p>
           </div>
 

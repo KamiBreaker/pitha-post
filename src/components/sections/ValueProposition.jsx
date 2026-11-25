@@ -9,7 +9,7 @@ const PILLARS = [
   {
     icon: '📜',
     title: 'Keepsake recipe cards',
-    body:  'Each kit includes a durable step-by-step card with exact proportions and grandma’s secret timing tricks for bhapa, patishapta, and puli.',
+    body:  'Each kit includes a durable step-by-step card with exact proportions and family timing tips for every pitha variety.',
   },
   {
     icon: '🛵',

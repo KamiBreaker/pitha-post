@@ -248,11 +248,11 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl font-black text-forest mt-3 text-balance">
-                Three traditional winter classics.
+                Traditional winter classics, and more.
               </h2>
             </div>
             <p className="text-sm sm:text-base text-forest/70 max-w-md">
-              Each pitha has its own traditional method, from steaming in layered muslin to rolling thin golden crêpes.
+              From steamed Bhapa and thin Patishapta to golden Malpoa, Teler Pitha, and hand-carved Pakon, every variety has its own kit.
             </p>
           </div>
 
@@ -402,7 +402,7 @@ export default function Home() {
           {/* Timeline steps */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              { n: '01', title: 'Choose Your Box', desc: 'Pick the 3-pitha Winter Trio, Bhapa Starter, or a One-Time Gift.', icon: '📦' },
+              { n: '01', title: 'Choose Your Box', desc: 'Pick from Bhapa, Malpoa, Teler, Pakon, the Winter Trio, or a Gift Box.', icon: '📦' },
               { n: '02', title: 'Enter Dhaka Address', desc: 'Provide neighborhood & phone. No passwords or cards needed.', icon: '📍' },
               { n: '03', title: 'WhatsApp Check-in', desc: 'A formatted order link opens WhatsApp. Confirm bKash or cash.', icon: '💬' },
               { n: '04', title: 'Fresh Batch Dispatch', desc: 'Ingredients packed and dispatched for weekend morning arrival.', icon: '🛵' },
