@@ -57,7 +57,7 @@ export default function OurStory() {
               Signature Winter Classics
             </h2>
             <p className="text-forest/70 text-base mt-2">
-              A closer look at our core winter pithas, alongside seasonal Malpoa, Teler Pitha, and Pakon Pitha.
+              A closer look at all six traditional winter pithas in our kitchen, from steamed classics to golden fried favorites.
             </p>
           </div>
 

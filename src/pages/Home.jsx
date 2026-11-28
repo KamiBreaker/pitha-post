@@ -295,7 +295,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {pithas.map(({ id, name, subtitle, tagline, description, image }, i) => (
+            {pithas.map(({ id, name, subtitle, tagline, description, image, includedIn }, i) => (
               <div
                 key={id}
                 className="bg-cream rounded-3xl border-2 border-forest shadow-stamp hover:-translate-y-2 hover:shadow-rich transition-all duration-300 overflow-hidden flex flex-col group"
@@ -336,7 +336,7 @@ export default function Home() {
 
                   <div className="pt-4 border-t-2 border-forest/10 flex items-center justify-between text-xs font-bold">
                     <span className="text-forest bg-paddy/30 px-2.5 py-1 rounded-sm">
-                      Included in Trio Box
+                      {includedIn?.includes('winter-trio') ? 'Included in Trio Box' : 'Standalone Kit'}
                     </span>
                     <Link
                       to="/our-story"

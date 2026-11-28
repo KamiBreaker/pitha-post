@@ -1,6 +1,6 @@
 // ─── Individual Pitha Varieties ───────────────────────────────────────────────
-// Editorial data for the three classic Bengali winter pithas.
-// Used by OurStory, Home ("three lovely ways") and any future pitha guide pages.
+// Editorial data for the classic Bengali winter pithas.
+// Used by OurStory, Home and any future pitha guide pages.
 
 export const pithas = [
   {
@@ -50,6 +50,51 @@ export const pithas = [
       'For boiled puli, the syrup should be gently simmering, not rolling.',
     ],
     includedIn: ['winter-trio', 'gift-a-box'],
+  },
+  {
+    id:       'malpoa',
+    name:     'Malpoa',
+    subtitle: 'Syrup-soaked and golden',
+    tagline:  'Crisp edges with a tender, fragrant center.',
+    description:
+      "Golden rice-and-flour pancakes fried until crisp at the rim and soaked in warm, " +
+      "cardamom-scented khejur gur syrup. Rich, aromatic, and a staple at winter feasts.",
+    image:    '/images/pitha/malpoa.webp',
+    tips: [
+      'Fry on medium-low heat so the center cooks through without darkening too fast.',
+      'Soak in warm, not boiling, gur syrup for 5 to 10 minutes so they stay tender.',
+    ],
+    includedIn: ['malpoa-kit'],
+  },
+  {
+    id:       'teler-pitha',
+    name:     'Teler Pitha',
+    subtitle: 'Puffed and caramelized',
+    tagline:  'Deep-fried winter comfort sweetened with khejur gur.',
+    description:
+      "Also known as pua pitha, this deep-fried batter of stone-milled rice flour and dark " +
+      "date palm jaggery puffs up into a soft, domed cushion with crisp edges.",
+    image:    '/images/pitha/teler-pitha.webp',
+    tips: [
+      'Let the batter rest for at least 30 minutes so the rice flour absorbs moisture evenly.',
+      'Pour into the center of medium-hot oil and let each pitha rise and puff naturally.',
+    ],
+    includedIn: ['teler-pitha-kit', 'teler-pakon-box'],
+  },
+  {
+    id:       'pakon-pitha',
+    name:     'Pakon Pitha',
+    subtitle: 'Carved and flaky',
+    tagline:  'Hand-patterned lentil-rice pastry finished in syrup.',
+    description:
+      "A traditional mug pakon dough made with moong dal and rice flour, pressed and carved " +
+      "with leaf or floral patterns using a bamboo pick, then slow-fried and glazed in gur syrup.",
+    image:    '/images/pitha/pakon-pitha.webp',
+    tips: [
+      'Knead the warm dough until completely smooth before carving your patterns.',
+      'Fry slowly on low heat so the carved ridges turn crisp and golden all the way through.',
+    ],
+    includedIn: ['pakon-pitha-kit', 'teler-pakon-box'],
   },
 ];
 
